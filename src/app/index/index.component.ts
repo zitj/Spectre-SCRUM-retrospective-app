@@ -9,8 +9,7 @@ import { RegisterFormComponent } from '../register-form/register-form.component'
   styleUrls: ['./index.component.scss'],
 })
 export class IndexComponent implements OnInit {
-  dialogService: DialogService;
-  constructor(dialogService: DialogService) {
+  constructor(public dialogService: DialogService) {
     this.dialogService = dialogService;
   }
   ngOnInit(): void {}

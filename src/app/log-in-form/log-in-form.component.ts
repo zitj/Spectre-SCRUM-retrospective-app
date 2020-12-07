@@ -8,10 +8,8 @@ import { DialogService } from '../dialog.service';
 })
 export class LogInFormComponent implements OnInit {
   hide: boolean = true;
-  dialogService: DialogService;
-  constructor(dialogService: DialogService) {
-    this.dialogService = dialogService;
-  }
+
+  constructor() {}
 
   ngOnInit(): void {}
 }
