@@ -13,10 +13,10 @@ export class IndexComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openSignUpForm() {
-    return this.dialog.open(RegisterComponent);
+  openSignUpForm(): void {
+    this.dialog.open(RegisterComponent);
   }
-  openSignInForm() {
-    return this.dialog.open(LoginComponent);
+  openSignInForm(): void {
+    this.dialog.open(LoginComponent);
   }
 }
