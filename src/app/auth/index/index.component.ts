@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DialogService } from '../dialog.service';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-index',
@@ -9,16 +9,14 @@ import { LoginComponent } from './login/login.component';
   styleUrls: ['./index.component.scss'],
 })
 export class IndexComponent implements OnInit {
-  constructor(public dialogService: DialogService) {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
   openSignUpForm() {
-    console.log('sign up form');
-    this.dialogService.dialog.open(RegisterComponent);
+    this.dialog.open(RegisterComponent);
   }
   openSignInForm() {
-    console.log('sign in form');
-    this.dialogService.dialog.open(LoginComponent);
+    this.dialog.open(LoginComponent);
   }
 }
