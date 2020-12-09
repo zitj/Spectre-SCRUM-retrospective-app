@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { AuthModule } from './auth/auth.module';
-import { MainModule } from './main/main.module';
 import { RouterModule } from '@angular/router';
 import { importType } from '@angular/compiler/src/output/output_ast';
 
@@ -21,8 +20,7 @@ const routes = [
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AuthModule,
-    MainModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],

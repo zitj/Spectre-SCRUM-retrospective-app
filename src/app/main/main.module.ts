@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 
 const routes = [
   {
-    path: 'main/dashboards',
+    path: 'dashboards',
     component: DashboardsComponent,
   },
 ];
