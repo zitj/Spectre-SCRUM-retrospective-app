@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
 
 const routes = [
   {
-    path: 'index',
+    path: '',
     component: IndexComponent,
   },
 ];
