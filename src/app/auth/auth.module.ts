@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes = [
   {
@@ -35,6 +36,7 @@ const routes = [
     MatCardModule,
     FormsModule,
     MatInputModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes),
   ],
   providers: [],
