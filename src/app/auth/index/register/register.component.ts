@@ -13,20 +13,22 @@ export class RegisterComponent implements OnInit {
 
   constructor(public dialog: MatDialog) {}
 
-  formGroup = new FormGroup({
-    firstName: new FormControl('', Validators.required),
-    lastName: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
-  });
+  formGroup: any;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.formGroup = new FormGroup({
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+    });
+  }
 
   onSubmit(): void {
     console.log(this.formGroup.value);
   }
 
-  closeBtnHandler(): void {
+  closeDialog(): void {
     this.dialog.closeAll();
   }
 }
