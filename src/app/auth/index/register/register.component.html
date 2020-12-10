@@ -1,7 +1,7 @@
 <div class="register-form form">
   <h1 mat-dialog-title>Sign up</h1>
   <svg
-    (click)="closeDialog()"
+    (click)="dialog.closeAll()"
     xmlns="http://www.w3.org/2000/svg"
     height="24"
     viewBox="0 0 24 24"
@@ -16,17 +16,13 @@
     <mat-form-field appearance="fill">
       <mat-label>First name</mat-label>
       <input matInput placeholder="First name" formControlName="firstName" />
-      <mat-error *ngIf="formGroup.get('firstName')"
-        >First name is required</mat-error
-      >
+      <mat-error>First name is required</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Last name</mat-label>
       <input matInput placeholder="Last name" formControlName="lastName" />
-      <mat-error *ngIf="formGroup.get('lastName')"
-        >Last name is required</mat-error
-      >
+      <mat-error>Last name is required</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -39,7 +35,7 @@
         formControlName="email"
         [email]="true"
       />
-      <mat-error *ngIf="formGroup.get('email')">Email is required</mat-error>
+      <mat-error>Email is required</mat-error>
     </mat-form-field>
 
     <mat-form-field class="pw" appearance="fill">
@@ -49,9 +45,7 @@
         [type]="hidePassword ? 'password' : 'text'"
         formControlName="password"
       />
-      <mat-error *ngIf="formGroup.get('password')"
-        >Password is required</mat-error
-      >
+      <mat-error>Password is required</mat-error>
       <button
         mat-icon-button
         matSuffix

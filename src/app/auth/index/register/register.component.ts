@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -11,24 +11,20 @@ import { MatDialog } from '@angular/material/dialog';
 export class RegisterComponent implements OnInit {
   hidePassword: boolean = false;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private formBuilder: FormBuilder) {}
 
-  formGroup: any;
+  public formGroup: FormGroup = new FormGroup({});
 
   ngOnInit(): void {
-    this.formGroup = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required),
+    this.formGroup = this.formBuilder.group({
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
     });
   }
 
   onSubmit(): void {
     console.log(this.formGroup.value);
-  }
-
-  closeDialog(): void {
-    this.dialog.closeAll();
   }
 }
