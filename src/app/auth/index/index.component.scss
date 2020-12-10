@@ -1,0 +1,84 @@
+.wrapper {
+  .container {
+    text-align: center;
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    .card {
+      font-family: "Raleway", sans-serif;
+      padding: 5%;
+      position: relative;
+      border-radius: 0px 400px;
+      background: rgb(255, 255, 255);
+      box-shadow: 0px 0px 50px 5px rgba(0, 251, 197, 0.376);
+      opacity: 0.97;
+      &:nth-child(1),
+      &:nth-child(3) {
+        height: 150px;
+        opacity: 0.9;
+      }
+      &:nth-child(1) {
+        background-image: linear-gradient(#0a3d6249, rgb(255, 255, 255));
+        border-radius: 400px 20px 400px 0px;
+        margin-bottom: 10px;
+      }
+      &:nth-child(3) {
+        background-image: linear-gradient(rgb(255, 255, 255), #0a3d6249);
+        border-radius: 20px 0 400px 400px;
+        margin-top: 10px;
+      }
+
+      svg {
+        display: inline-block;
+        margin-bottom: -10px;
+        margin-right: 10px;
+        width: 60px;
+        height: 60px;
+      }
+
+      .title {
+        font-size: 4em;
+        font-family: "Audiowide", cursive;
+        text-transform: uppercase;
+        margin-bottom: 0.7em;
+        margin-top: 0.7em;
+        color: #59595a;
+        letter-spacing: 3px;
+        margin-left: -30px;
+      }
+
+      .desc {
+        font-size: 1.8em;
+        margin-bottom: 0.7em;
+      }
+    }
+
+    .buttons {
+      margin-left: -6px;
+    }
+
+    .btn {
+      height: 50px;
+      padding: 5px 50px;
+      color: white;
+      margin-left: 3px;
+      &:nth-child(1) {
+        background-image: linear-gradient(to right, #0a3d62, #079992);
+        border-radius: 4px 0px 0px 30px;
+      }
+      &:nth-child(2) {
+        background-image: linear-gradient(to left, #0a3d62, #079992);
+        border-radius: 0px 30px 4px 0px;
+      }
+    }
+  }
+
+  .toolbar {
+    .example-spacer {
+      flex: 1 1 auto;
+    }
+  }
+}

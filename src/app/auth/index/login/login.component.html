@@ -1,0 +1,29 @@
+<div class="log-in-form form">
+  <h1 mat-dialog-title>Sign in</h1>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" />
+      <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field class="pw" appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+  </p>
+  <div mat-dialog-actions>
+    <button mat-flat-button color="accent" class="btn">Submit</button>
+  </div>
+</div>
+<!-- <router-outlet></router-outlet> -->
