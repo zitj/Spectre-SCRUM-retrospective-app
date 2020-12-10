@@ -9,11 +9,11 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  hide: boolean = false;
+  hidePassword: boolean = false;
 
   constructor(public dialog: MatDialog) {}
 
-  user = new FormGroup({
+  formGroup = new FormGroup({
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required),
@@ -23,16 +23,10 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(): void {
-    console.log(this.user.value);
+    console.log(this.formGroup.value);
   }
 
-  myClickHandler($event: any): void {
-    $event.preventDefault();
-    this.hide = !this.hide;
-  }
-
-  closeBtnHandler($event: any): void {
-    $event.preventDefault();
+  closeBtnHandler(): void {
     this.dialog.closeAll();
   }
 }
