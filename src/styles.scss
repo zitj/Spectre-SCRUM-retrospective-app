@@ -44,23 +44,48 @@ body {
   background: #0a3d62;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
 .form {
-  padding: 10% 5%;
+  padding: 10% 7%;
   z-index: 10;
   background: white;
+  position: relative;
   h1 {
     text-align: center;
   }
-
+  svg {
+    display: inline-block;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    transform: rotate(0deg) scale(1);
+    &:hover {
+      transform: rotate(90deg) scale(1.05);
+    }
+  }
   .pw,
   mat-form-field,
   .btn {
     width: 100%;
+  }
+  mat-form-field {
+    margin-bottom: 10px;
   }
 
   .btn {
     background: #079992;
     color: white;
     border-radius: 1px 80px;
+    height: 45px;
   }
+}
+.container .mat-dialog-container {
+  border-radius: 4px 30px;
+  width: 20%;
+  height: 55%;
+  position: absolute;
+  top: 25%;
+  left: 40%;
 }

@@ -14,7 +14,9 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {}
 
   openSignUpForm(): void {
-    this.dialog.open(RegisterComponent);
+    this.dialog.open(RegisterComponent, {
+      panelClass: 'container',
+    });
   }
   openSignInForm(): void {
     this.dialog.open(LoginComponent);
