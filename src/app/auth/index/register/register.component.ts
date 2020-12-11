@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { DataService } from '../../../data.service';
+import { Users } from '../../../users';
 
 @Component({
   selector: 'app-register',
@@ -11,9 +13,14 @@ import { FormBuilder } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   hidePassword: boolean = false;
 
-  constructor(public dialog: MatDialog, private formBuilder: FormBuilder) {}
+  constructor(
+    public dialog: MatDialog,
+    private formBuilder: FormBuilder,
+    public dataService: DataService
+  ) {}
 
   public formGroup: FormGroup = new FormGroup({});
+  users: Users[] = [];
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
@@ -22,9 +29,11 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
     });
+    this.dataService.getUsers().subscribe((data) => {
+      this.users = data;
+      console.log(this.users);
+    });
   }
 
-  onSubmit(): void {
-    console.log(this.formGroup.value);
-  }
+  onSubmit(): void {}
 }
