@@ -47,7 +47,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
     for (let user of this.users) {
       if (user.email === this.formGroup.value.email) {
         this.emailCheck = true;
-        alert('The user with this email already exists.');
         return;
       }
     }
