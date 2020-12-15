@@ -51,11 +51,11 @@ export class RegisterComponent implements OnInit, OnDestroy {
       }
     }
 
-    alert('You have successfully created a new account!');
-
     this.postSub = this.usersService
       .postUser(this.formGroup.value)
-      .subscribe((data) => {});
+      .subscribe((data) => {
+        alert('You have successfully created a new account!');
+      });
 
     this.dialog.closeAll();
   }
