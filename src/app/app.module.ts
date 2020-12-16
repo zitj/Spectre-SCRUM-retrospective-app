@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { importType } from '@angular/compiler/src/output/output_ast';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes = [
   {
@@ -20,6 +21,7 @@ const routes = [
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
   ],
