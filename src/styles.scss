@@ -41,8 +41,9 @@ body {
 }
 body {
   margin: 0;
-  background: #0a3d62;
+  background: linear-gradient(120deg, #0a3d62, #079992 250%);
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100vh;
 }
 
 .form {
