@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getSub = this.usersService.getUsers().subscribe((data) => {
       this.users = data;
-      console.log(this.users);
     });
     this.formGroup = this.formBuilder.group({
       email: [
@@ -54,12 +53,10 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   uniqueEmail = (users: User[]) => {
     return (control: FormControl): { [key: string]: any } | null => {
-      console.log(control.value);
       if (!control.value) {
         return null;
       }
       if (this.users.find((user) => user.email == control.value)) {
-        console.log('ISti mejl');
         this.emailCheck = false;
       } else {
         this.emailCheck = true;
@@ -70,12 +67,10 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   uniquePassword = (users: User[]) => {
     return (control: FormControl): { [key: string]: any } | null => {
-      console.log(control.value);
       if (!control.value) {
         return null;
       }
       if (this.users.find((user) => user.password == control.value)) {
-        console.log('ISti password');
         this.passwordCheck = false;
       } else {
         this.passwordCheck = true;
