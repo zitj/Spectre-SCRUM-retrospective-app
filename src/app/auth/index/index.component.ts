@@ -15,10 +15,12 @@ export class IndexComponent implements OnInit {
 
   openSignUpForm(): void {
     this.dialog.open(RegisterComponent, {
-      panelClass: 'container',
+      panelClass: 'registerContainer',
     });
   }
   openSignInForm(): void {
-    this.dialog.open(LoginComponent);
+    this.dialog.open(LoginComponent, {
+      panelClass: 'loginContainer',
+    });
   }
 }

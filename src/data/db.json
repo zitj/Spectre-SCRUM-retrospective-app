@@ -6,6 +6,13 @@
       "email": "avelj@gmail.com",
       "password": "1234",
       "id": 1
+    },
+    {
+      "firstName": "Ivan",
+      "lastName": "Veljkovic",
+      "email": "ivelj@gmail.com",
+      "password": "2222",
+      "id": 2
     }
   ]
 }

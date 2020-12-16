@@ -55,8 +55,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
       .postUser(this.formGroup.value)
       .subscribe((data) => {
         alert('You have successfully created a new account!');
+        this.dialog.closeAll();
       });
-
-    this.dialog.closeAll();
   }
 }

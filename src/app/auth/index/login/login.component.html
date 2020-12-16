@@ -1,29 +1,60 @@
 <div class="log-in-form form">
   <h1 mat-dialog-title>Sign in</h1>
-  <p>
+  <svg
+    (click)="dialog.closeAll()"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+  >
+    <path d="M0 0h24v24H0z" fill="none" />
+    <path
+      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+    />
+  </svg>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <mat-form-field appearance="fill">
       <mat-label>Enter your email</mat-label>
-      <input matInput placeholder="pat@example.com" />
-      <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+      <input matInput placeholder="pat@example.com" formControlName="email" />
+      <mat-error>Email is required</mat-error>
+      <mat-hint *ngIf="emailCheck" class="hint">Check your email</mat-hint>
     </mat-form-field>
-  </p>
-  <p>
+
     <mat-form-field class="pw" appearance="fill">
       <mat-label>Enter your password</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'" />
+      <input
+        matInput
+        [type]="hidePassword ? 'password' : 'text'"
+        formControlName="password"
+      />
       <button
         mat-icon-button
         matSuffix
-        (click)="hide = !hide"
+        (click)="hidePassword = !hidePassword"
         [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hide"
+        [attr.aria-pressed]="hidePassword"
+        type="button"
       >
-        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        <mat-icon>{{
+          hidePassword ? "visibility_off" : "visibility"
+        }}</mat-icon>
       </button>
+      <mat-error>Password is required</mat-error>
+      <mat-hint *ngIf="passwordCheck" class="hint"
+        >Check your password again</mat-hint
+      >
     </mat-form-field>
-  </p>
-  <div mat-dialog-actions>
-    <button mat-flat-button color="accent" class="btn">Submit</button>
-  </div>
+
+    <div mat-dialog-actions>
+      <button
+        mat-flat-button
+        color="accent"
+        class="btn"
+        type="submit"
+        [disabled]="!formGroup.valid"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
 </div>
-<!-- <router-outlet></router-outlet> -->
