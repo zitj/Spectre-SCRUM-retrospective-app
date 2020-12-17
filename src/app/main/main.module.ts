@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TeamsComponent } from './teams/teams.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     TeamsComponent,
     StatisticsComponent,
   ],
-  imports: [CommonModule, MatToolbarModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    MatToolbarModule,
+    MatIconModule,
+    RouterModule.forChild(routes),
+  ],
 })
 export class MainModule {}

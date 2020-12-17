@@ -36,7 +36,7 @@ mat-toolbar {
     border: none;
     outline: none;
     font-family: "Raleway", sans-serif;
-    transition: 0.2s ease-in-out;
+    transition: 0.1s;
     margin-right: 15px;
     color: #414142;
     &:hover,
@@ -45,5 +45,20 @@ mat-toolbar {
       font-weight: 700;
       border-bottom: 2px solid #09afa7;
     }
+    &:nth-child(4) {
+      margin-left: 40px;
+      font-size: 1em;
+      font-weight: 400;
+      position: relative;
+      &:hover {
+        border-bottom: none;
+        color: #09afa7;
+      }
+    }
+  }
+  mat-icon {
+    position: absolute;
+    font-size: 2em;
+    top: 23%;
   }
 }
