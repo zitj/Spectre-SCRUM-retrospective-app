@@ -1,11 +1,9 @@
-import { importType } from '@angular/compiler/src/output/output_ast';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { UsersService } from '../../../users.service';
 import { Subscription } from 'rxjs';
-import { User } from '../../../user';
 import { LoginSuccessComponent } from './login-success/login-success.component';
 
 @Component({
@@ -22,10 +20,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   ) {}
 
   private getSub: Subscription = new Subscription();
-  emailCheck: boolean = false;
-  passwordCheck: boolean = false;
   formGroup: FormGroup = new FormGroup({});
-  users: User[] = [];
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
@@ -40,17 +35,20 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onSubmit(): void {
     this.getSub = this.usersService.getUsers().subscribe((data) => {
-      this.users = data;
-      for (let user of this.users) {
+      let users = data;
+      for (let user of users) {
         if (
-          user.email == this.formGroup.value.email &&
-          user.password == this.formGroup.value.password
+          user.email === this.formGroup.value.email &&
+          user.password === this.formGroup.value.password
         ) {
           localStorage.setItem('UserLoggedIn', JSON.stringify(user));
           this.dialog.open(LoginSuccessComponent);
-        } else {
-          this.emailCheck = true;
-          this.passwordCheck = true;
+        }
+        if (user.email !== this.formGroup.value.email) {
+          this.formGroup.controls.email.markAsPending();
+        }
+        if (user.password !== this.formGroup.value.password) {
+          this.formGroup.controls.password.markAsPending();
         }
       }
     });
