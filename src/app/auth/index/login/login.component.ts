@@ -1,18 +1,12 @@
 import { importType } from '@angular/compiler/src/output/output_ast';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-  EmailValidator,
-  Form,
-} from '@angular/forms';
+import { FormGroup, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { UsersService } from '../../../users.service';
 import { Subscription } from 'rxjs';
 import { User } from '../../../user';
-import { Router } from '@angular/router';
+import { LoginSuccessComponent } from './login-success/login-success.component';
 
 @Component({
   selector: 'app-login',
@@ -24,8 +18,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(
     public dialog: MatDialog,
     private formBuilder: FormBuilder,
-    private usersService: UsersService,
-    private router: Router
+    private usersService: UsersService
   ) {}
 
   private getSub: Subscription = new Subscription();
@@ -35,15 +28,9 @@ export class LoginComponent implements OnInit, OnDestroy {
   users: User[] = [];
 
   ngOnInit(): void {
-    this.getSub = this.usersService.getUsers().subscribe((data) => {
-      this.users = data;
-    });
     this.formGroup = this.formBuilder.group({
-      email: [
-        null,
-        [Validators.required, Validators.email, this.uniqueEmail(this.users)],
-      ],
-      password: [null, [Validators.required, this.uniquePassword(this.users)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
     });
   }
 
@@ -51,45 +38,21 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.getSub.unsubscribe();
   }
 
-  uniqueEmail = (users: User[]) => {
-    return (control: FormControl): { [key: string]: any } | null => {
-      if (!control.value) {
-        return null;
-      }
-      if (this.users.find((user) => user.email == control.value)) {
-        this.emailCheck = false;
-      } else {
-        this.emailCheck = true;
-      }
-      return {};
-    };
-  };
-
-  uniquePassword = (users: User[]) => {
-    return (control: FormControl): { [key: string]: any } | null => {
-      if (!control.value) {
-        return null;
-      }
-      if (this.users.find((user) => user.password == control.value)) {
-        this.passwordCheck = false;
-      } else {
-        this.passwordCheck = true;
-      }
-      return {};
-    };
-  };
-
   onSubmit(): void {
-    for (let user of this.users) {
-      if (
-        user.email == this.formGroup.value.email &&
-        user.password == this.formGroup.value.password
-      ) {
-        localStorage.setItem('UserLoggedIn', JSON.stringify(user));
-        this.router.navigate(['/main']);
-        alert('You have successfully logged in!');
-        this.dialog.closeAll();
+    this.getSub = this.usersService.getUsers().subscribe((data) => {
+      this.users = data;
+      for (let user of this.users) {
+        if (
+          user.email == this.formGroup.value.email &&
+          user.password == this.formGroup.value.password
+        ) {
+          localStorage.setItem('UserLoggedIn', JSON.stringify(user));
+          this.dialog.open(LoginSuccessComponent);
+        } else {
+          this.emailCheck = true;
+          this.passwordCheck = true;
+        }
       }
-    }
+    });
   }
 }
