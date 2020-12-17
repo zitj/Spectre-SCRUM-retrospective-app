@@ -39,7 +39,8 @@ mat-toolbar {
     transition: 0.2s ease-in-out;
     margin-right: 15px;
     color: #414142;
-    &:hover {
+    &:hover,
+    &.active {
       font-size: 1.1em;
       font-weight: 700;
       border-bottom: 2px solid #09afa7;
