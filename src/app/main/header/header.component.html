@@ -84,9 +84,12 @@
     <button routerLink="/main/statistics" routerLinkActive="active">
       Statistics
     </button>
-    <button>
+    <button mat-button [matMenuTriggerFor]="logOutMenu">
       {{ profileName }}
     </button>
     <mat-icon>perm_identity</mat-icon>
   </nav>
 </mat-toolbar>
+<mat-menu #logOutMenu="matMenu">
+  <button mat-menu-item (click)="logOut()">Log out</button>
+</mat-menu>

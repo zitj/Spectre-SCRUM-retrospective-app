@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../user';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,6 +8,11 @@ export class HeaderComponent implements OnInit {
   userLoggedIn = JSON.parse(localStorage.getItem('UserLoggedIn') || '{}');
   profileName = this.userLoggedIn.firstName;
   constructor() {}
+
+  logOut(): void {
+    localStorage.removeItem('UserLoggedIn');
+    window.location.replace('/auth');
+  }
 
   ngOnInit(): void {}
 }

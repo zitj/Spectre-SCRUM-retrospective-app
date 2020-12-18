@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { TeamsComponent } from './teams/teams.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 const routes = [
   {
@@ -35,6 +36,7 @@ const routes = [
     CommonModule,
     MatToolbarModule,
     MatIconModule,
+    MatMenuModule,
     RouterModule.forChild(routes),
   ],
 })

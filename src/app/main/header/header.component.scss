@@ -36,12 +36,10 @@ mat-toolbar {
     border: none;
     outline: none;
     font-family: "Raleway", sans-serif;
-    transition: 0.1s;
     margin-right: 15px;
     color: #414142;
     &:hover,
     &.active {
-      font-size: 1.1em;
       font-weight: 700;
       border-bottom: 2px solid #09afa7;
     }
