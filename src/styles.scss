@@ -104,6 +104,11 @@ body {
     color: white;
     border-radius: 1px 80px;
     height: 45px;
+    transition: 0.2s;
+    &:hover {
+      border-radius: 1px;
+      opacity: 0.9;
+    }
   }
 }
 .registerContainer .mat-dialog-container,
@@ -119,4 +124,58 @@ body {
   height: 43%;
   top: 29.5%;
   padding: 2% 2.5% 1%;
+}
+.loginSuccesContainer .mat-dialog-container {
+  text-align: center;
+  width: 400px;
+  height: 300px;
+  border-radius: 3px 30px;
+  position: relative;
+  svg {
+    position: absolute;
+    left: 0%;
+    top: -20%;
+    transform: scale(0.3);
+    stroke: #079992;
+    stroke-width: 1;
+    fill: white;
+    stroke-dasharray: 240;
+    stroke-dashoffset: 0;
+    animation: check 0.6s ease-in;
+    .st0 {
+      fill: white;
+    }
+    .st1 {
+      fill: white;
+      stroke: #079992;
+      stroke-width: 1;
+      stroke-dasharray: 240;
+      stroke-dashoffset: 0;
+      animation: check 2s ease-in;
+    }
+    @keyframes check {
+      0% {
+        stroke-dashoffset: 240;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+  h1 {
+    padding: 2% 2.5%;
+    font-size: 1.4em;
+  }
+  button {
+    width: 70%;
+    margin: 35% auto 0;
+    color: white;
+    background: #079992;
+    height: 50px;
+    border-radius: 1px 30px;
+    transition: 0.2s;
+    &:hover {
+      border-radius: 1px;
+    }
+  }
 }

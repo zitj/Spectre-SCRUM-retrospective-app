@@ -23,6 +23,11 @@ const routes = [
     path: 'teams',
     component: TeamsComponent,
   },
+  {
+    path: '**',
+    redirectTo: '/main/teams',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
