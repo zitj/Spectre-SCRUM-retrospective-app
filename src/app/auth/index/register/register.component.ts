@@ -5,6 +5,7 @@ import { FormBuilder } from '@angular/forms';
 import { UsersService } from '../../../users.service';
 import { Subscription } from 'rxjs';
 import { User } from '../../../user';
+import { RegisterSuccessComponent } from './register-success/register-success.component';
 
 @Component({
   selector: 'app-register',
@@ -54,8 +55,9 @@ export class RegisterComponent implements OnInit, OnDestroy {
     this.postSub = this.usersService
       .postUser(this.formGroup.value)
       .subscribe((data) => {
-        alert('You have successfully created a new account!');
-        this.dialog.closeAll();
+        this.dialog.open(RegisterSuccessComponent, {
+          panelClass: 'registerSuccessContainer',
+        });
       });
   }
 }
