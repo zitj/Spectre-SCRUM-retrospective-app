@@ -128,13 +128,13 @@ body {
 .loginSuccesContainer .mat-dialog-container {
   text-align: center;
   width: 400px;
-  height: 300px;
+  height: 450px;
   border-radius: 3px 30px;
   position: relative;
   svg {
     position: absolute;
     left: 0%;
-    top: -20%;
+    top: 5%;
     transform: scale(0.3);
     stroke: #079992;
     stroke-width: 1;
@@ -165,14 +165,15 @@ body {
   h1 {
     padding: 2% 2.5%;
     font-size: 1.4em;
+    margin-top: 13%;
   }
   button {
-    width: 70%;
-    margin: 35% auto 0;
+    width: 60%;
+    margin: 55% auto 0;
     color: white;
     background: #079992;
     height: 50px;
-    border-radius: 1px 30px;
+    border-radius: 1px 20px;
     transition: 0.2s;
     &:hover {
       border-radius: 1px;
