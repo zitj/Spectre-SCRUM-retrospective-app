@@ -58,9 +58,22 @@ body {
     color: #079992;
   }
   .credErr {
-    margin-top: -25px;
+    margin-top: -15px;
     margin-bottom: 10px;
+    margin: -12px 0px 10px 10px;
     font-size: 0.8em;
+    animation: credIntro 0.2s;
+    color: #ff7b00;
+    @keyframes credIntro {
+      0% {
+        margin-top: -20px;
+        opacity: 0;
+      }
+      100% {
+        margin-top: -15px;
+        opacity: 1;
+      }
+    }
   }
   h1 {
     text-align: center;
@@ -103,7 +116,7 @@ body {
   left: 40%;
 }
 .loginContainer .mat-dialog-container {
-  height: 41%;
+  height: 43%;
   top: 29.5%;
   padding: 2% 2.5% 1%;
 }
