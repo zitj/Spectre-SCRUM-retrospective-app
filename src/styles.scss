@@ -56,6 +56,11 @@ body {
   .hint {
     color: #079992;
   }
+  .credErr {
+    margin-top: -25px;
+    margin-bottom: 10px;
+    font-size: 0.8em;
+  }
   h1 {
     text-align: center;
   }
@@ -87,11 +92,17 @@ body {
     height: 45px;
   }
 }
-.container .mat-dialog-container {
+.registerContainer .mat-dialog-container,
+.loginContainer .mat-dialog-container {
   border-radius: 4px 30px;
   width: 20%;
   height: 55%;
   position: absolute;
   top: 25%;
   left: 40%;
+}
+.loginContainer .mat-dialog-container {
+  height: 41%;
+  top: 29.5%;
+  padding: 2% 2.5% 1%;
 }
