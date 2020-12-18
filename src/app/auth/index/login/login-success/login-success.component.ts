@@ -10,7 +10,7 @@ import { Action } from 'rxjs/internal/scheduler/Action';
 export class LoginSuccessComponent implements OnInit {
   constructor(public dialog: MatDialog, private router: Router) {}
 
-  someAction() {
+  navigateToMain() {
     this.router.navigate(['/main/dashboards']);
     this.dialog.closeAll();
   }

@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   private getSub: Subscription = new Subscription();
   formGroup: FormGroup = new FormGroup({});
+  credentialsInvalid: boolean = false;
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
@@ -44,12 +45,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           localStorage.setItem('UserLoggedIn', JSON.stringify(user));
           this.dialog.open(LoginSuccessComponent);
         }
-        if (user.email !== this.formGroup.value.email) {
-          this.formGroup.controls.email.markAsPending();
-        }
-        if (user.password !== this.formGroup.value.password) {
-          this.formGroup.controls.password.markAsPending();
-        }
+        this.credentialsInvalid = true;
       }
     });
   }
