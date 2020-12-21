@@ -9,11 +9,13 @@ import { StatisticsComponent } from './main/statistics/statistics.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MainComponent } from './main/main.component';
+import { MainGuard } from './main.guard';
 
 const routes = [
   {
     path: '',
     component: MainComponent,
+    canActivate: [MainGuard],
     children: [
       {
         path: 'dashboards',
@@ -29,6 +31,11 @@ const routes = [
         component: TeamsComponent,
       },
     ],
+  },
+  {
+    path: '**',
+    redirectTo: '/main',
+    pathMatch: 'full',
   },
 ];
 

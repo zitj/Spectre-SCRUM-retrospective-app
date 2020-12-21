@@ -8,12 +8,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 const routes = [
   {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then((a) => a.AuthModule),
+  },
+  {
     path: 'main',
     loadChildren: () => import('./main/main.module').then((m) => m.MainModule),
   },
   {
     path: '**',
-    loadChildren: () => import('./auth/auth.module').then((a) => a.AuthModule),
+    redirectTo: '/auth',
+    pathMatch: 'full',
   },
 ];
 

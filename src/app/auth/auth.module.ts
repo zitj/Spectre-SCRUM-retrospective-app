@@ -18,11 +18,13 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginSuccessComponent } from './index/login/login-success/login-success.component';
 import { RegisterSuccessComponent } from './index/register/register-success/register-success.component';
+import { AuthGuard } from './auth.guard';
 
 const routes = [
   {
     path: '',
     component: IndexComponent,
+    canActivate: [AuthGuard],
   },
 ];
 
