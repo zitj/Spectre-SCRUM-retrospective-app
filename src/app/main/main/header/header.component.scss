@@ -22,14 +22,15 @@ mat-toolbar {
   }
   svg,
   span,
-  button {
+  a {
     cursor: pointer;
   }
   nav {
     transition: 0.1s;
     padding: 1em;
   }
-  button {
+  a {
+    text-decoration: none;
     background: none;
     padding: 0.5em 0.3em;
     font-size: 1em;

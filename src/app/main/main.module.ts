@@ -1,32 +1,34 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardsComponent } from './dashboards/dashboards.component';
+import { DashboardsComponent } from './main/dashboards/dashboards.component';
 import { RouterModule } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './main/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { TeamsComponent } from './teams/teams.component';
-import { StatisticsComponent } from './statistics/statistics.component';
+import { TeamsComponent } from './main/teams/teams.component';
+import { StatisticsComponent } from './main/statistics/statistics.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MainComponent } from './main/main.component';
 
 const routes = [
   {
-    path: 'dashboards',
-    component: DashboardsComponent,
-  },
-  {
-    path: 'statistics',
-    component: StatisticsComponent,
-  },
+    path: '',
+    component: MainComponent,
+    children: [
+      {
+        path: 'dashboards',
+        component: DashboardsComponent,
+      },
+      {
+        path: 'statistics',
+        component: StatisticsComponent,
+      },
 
-  {
-    path: 'teams',
-    component: TeamsComponent,
-  },
-  {
-    path: '**',
-    redirectTo: '/main/teams',
-    pathMatch: 'full',
+      {
+        path: 'teams',
+        component: TeamsComponent,
+      },
+    ],
   },
 ];
 
@@ -36,6 +38,7 @@ const routes = [
     HeaderComponent,
     TeamsComponent,
     StatisticsComponent,
+    MainComponent,
   ],
   imports: [
     CommonModule,

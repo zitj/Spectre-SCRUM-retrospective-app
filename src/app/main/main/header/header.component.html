@@ -77,16 +77,12 @@
 
   <span class="example-spacer"></span>
   <nav>
-    <button routerLink="/main/teams" routerLinkActive="active">Teams</button>
-    <button routerLink="/main/dashboards" routerLinkActive="active">
-      Dashboards
-    </button>
-    <button routerLink="/main/statistics" routerLinkActive="active">
-      Statistics
-    </button>
-    <button mat-button [matMenuTriggerFor]="logOutMenu">
-      {{ profileName }}
-    </button>
+    <a routerLink="/main/teams" routerLinkActive="active">Teams</a>
+    <a routerLink="/main/dashboards" routerLinkActive="active"> Dashboards </a>
+    <a routerLink="/main/statistics" routerLinkActive="active"> Statistics </a>
+    <a mat-button [matMenuTriggerFor]="logOutMenu">
+      {{ userLoggedIn.firstName }}
+    </a>
     <mat-icon>perm_identity</mat-icon>
   </nav>
 </mat-toolbar>
