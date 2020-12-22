@@ -46,10 +46,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.dialog.open(LoginSuccessComponent, {
             panelClass: 'loginSuccesContainer',
           });
-        } else if (
-          user.email !== this.formGroup.value.email ||
-          user.password !== this.formGroup.value.password
-        ) {
+        } else {
           this.credentialsInvalid = true;
         }
       }
