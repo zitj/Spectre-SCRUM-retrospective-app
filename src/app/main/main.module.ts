@@ -10,6 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MainComponent } from './main/main.component';
 import { MainGuard } from './main.guard';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 const routes = [
   {
@@ -52,6 +54,8 @@ const routes = [
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
+    MatCardModule,
+    MatButtonModule,
     RouterModule.forChild(routes),
   ],
 })

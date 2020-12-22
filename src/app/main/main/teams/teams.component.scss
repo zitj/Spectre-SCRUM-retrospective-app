@@ -1,0 +1,69 @@
+@for $i from 1 through 10 {
+  .card:nth-child(1n + #{$i}) {
+    animation: cardIntro $i/4 + 0s;
+  }
+}
+
+.wrapper {
+  font-family: "Raleway", sans-serif;
+  height: 600px;
+  width: 70%;
+  margin: 10% 15%;
+  display: flex;
+  justify-content: space-between;
+  .create-new-team-btn {
+    background: rgba(0, 0, 0, 0.038);
+    font-size: 2em;
+    font-weight: 300;
+    border-radius: 10px;
+    width: 230px;
+    height: 230px;
+    color: white;
+    transition: 0.2s;
+    box-shadow: 0px 0px 15px 0px rgba(64, 224, 208, 0.15);
+    animation: cardIntro 0.6s;
+
+    &:hover {
+      transform: scale(1.03);
+      color: turquoise;
+      box-shadow: 0px 0px 40px 0px rgba(64, 224, 208, 0.15);
+    }
+    &:active {
+      transform: scale(1);
+      box-shadow: 0px 0px 15px 0px rgba(64, 224, 208, 0.15);
+    }
+    mat-icon {
+      font-size: 4.5em;
+      position: absolute;
+      top: 9%;
+      left: 20%;
+    }
+    span {
+      position: absolute;
+      bottom: 13%;
+      left: 21%;
+    }
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+  }
+  .card {
+    height: 200px;
+    width: 200px;
+    margin-left: 20px;
+    background: rgb(255, 255, 255);
+  }
+}
+@keyframes cardIntro {
+  0% {
+    opacity: 0;
+    transform: rotateY(90deg) translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg) translateY(0px);
+  }
+}

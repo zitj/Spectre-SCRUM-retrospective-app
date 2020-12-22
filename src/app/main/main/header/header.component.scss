@@ -9,7 +9,7 @@ mat-toolbar {
   border-radius: 70px 3px;
   padding: 2% 4% 2% 2.5%;
   color: #414142;
-  animation: headerIntro 0.3s ease-in;
+  animation: headerIntro 0.3s;
   @keyframes headerIntro {
     0% {
       width: 0%;
