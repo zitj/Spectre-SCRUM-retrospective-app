@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginSuccessComponent } from './index/login/login-success/login-success.component';
+import { RegisterSuccessComponent } from './index/register/register-success/register-success.component';
 
 const routes = [
   {
@@ -25,7 +27,13 @@ const routes = [
 ];
 
 @NgModule({
-  declarations: [IndexComponent, RegisterComponent, LoginComponent],
+  declarations: [
+    IndexComponent,
+    RegisterComponent,
+    LoginComponent,
+    LoginSuccessComponent,
+    RegisterSuccessComponent,
+  ],
   imports: [
     CommonModule,
     MatButtonModule,

@@ -43,9 +43,12 @@ export class LoginComponent implements OnInit, OnDestroy {
           user.password === this.formGroup.value.password
         ) {
           localStorage.setItem('UserLoggedIn', JSON.stringify(user));
-          this.dialog.open(LoginSuccessComponent);
+          this.dialog.open(LoginSuccessComponent, {
+            panelClass: 'loginSuccesContainer',
+          });
+        } else {
+          this.credentialsInvalid = true;
         }
-        this.credentialsInvalid = true;
       }
     });
   }

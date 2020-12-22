@@ -41,8 +41,9 @@ body {
 }
 body {
   margin: 0;
-  background: #0a3d62;
+  background: linear-gradient(120deg, #0a3d62, #079992 250%);
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100vh;
 }
 
 .form {
@@ -57,9 +58,22 @@ body {
     color: #079992;
   }
   .credErr {
-    margin-top: -25px;
+    margin-top: -15px;
     margin-bottom: 10px;
+    margin: -12px 0px 10px 10px;
     font-size: 0.8em;
+    animation: credIntro 0.2s;
+    color: #ff7b00;
+    @keyframes credIntro {
+      0% {
+        margin-top: -20px;
+        opacity: 0;
+      }
+      100% {
+        margin-top: -15px;
+        opacity: 1;
+      }
+    }
   }
   h1 {
     text-align: center;
@@ -90,6 +104,11 @@ body {
     color: white;
     border-radius: 1px 80px;
     height: 45px;
+    transition: 0.2s;
+    &:hover {
+      border-radius: 1px;
+      opacity: 0.9;
+    }
   }
 }
 .registerContainer .mat-dialog-container,
@@ -102,7 +121,76 @@ body {
   left: 40%;
 }
 .loginContainer .mat-dialog-container {
-  height: 41%;
+  height: 43%;
   top: 29.5%;
   padding: 2% 2.5% 1%;
+}
+.loginSuccesContainer .mat-dialog-container,
+.registerSuccessContainer .mat-dialog-container {
+  text-align: center;
+  width: 400px;
+  height: 450px;
+  border-radius: 3px 30px;
+  position: relative;
+  svg {
+    position: absolute;
+    left: 0%;
+    top: 5%;
+    transform: scale(0.3);
+    stroke: #079992;
+    stroke-width: 1;
+    fill: white;
+    stroke-dasharray: 240;
+    stroke-dashoffset: 0;
+    animation: check 0.6s ease-in;
+    .st0 {
+      fill: white;
+    }
+    .st1 {
+      fill: white;
+      stroke: #079992;
+      stroke-width: 1;
+      stroke-dasharray: 240;
+      stroke-dashoffset: 0;
+      animation: check 2s ease-in;
+    }
+    @keyframes check {
+      0% {
+        stroke-dashoffset: 240;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+  h1 {
+    padding: 2% 2.5%;
+    font-size: 1.4em;
+    margin-top: 13%;
+  }
+  button {
+    width: 60%;
+    margin: 55% auto 0;
+    color: white;
+    background: #079992;
+    height: 50px;
+    border-radius: 1px 20px;
+    transition: 0.2s;
+    &:hover {
+      border-radius: 1px;
+    }
+  }
+}
+.registerSuccessContainer .mat-dialog-container {
+  width: 500px;
+  height: 600px;
+  .center {
+    margin-top: 30px;
+  }
+  svg {
+    top: 7%;
+  }
+  button {
+    width: 50%;
+  }
 }
