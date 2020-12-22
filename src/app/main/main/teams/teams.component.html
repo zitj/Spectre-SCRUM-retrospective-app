@@ -1,5 +1,9 @@
 <div class="wrapper">
-  <button mat-flat-button class="create-new-team-btn">
+  <button
+    mat-flat-button
+    class="create-new-team-btn"
+    (click)="openCreateTeamPanel()"
+  >
     <mat-icon>group_add</mat-icon> <br />
     <span
       >Create new<br />

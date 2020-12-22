@@ -12,7 +12,12 @@ import { MainComponent } from './main/main.component';
 import { MainGuard } from './main.guard';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { CreateTeamComponent } from './main/teams/create-team/create-team.component';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 const routes = [
   {
     path: '',
@@ -48,6 +53,7 @@ const routes = [
     TeamsComponent,
     StatisticsComponent,
     MainComponent,
+    CreateTeamComponent,
   ],
   imports: [
     CommonModule,
@@ -56,6 +62,11 @@ const routes = [
     MatMenuModule,
     MatCardModule,
     MatButtonModule,
+    MatDialogModule,
+    MatInputModule,
+    FormsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes),
   ],
 })
