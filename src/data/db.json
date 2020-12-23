@@ -22,35 +22,5 @@
       "id": 3
     }
   ],
-  "teams": [
-    {
-      "name": "Veljkovici",
-      "industry": "Porodica",
-      "creatorId": 1,
-      "memberId": [
-        1,
-        2
-      ],
-      "id": 1
-    },
-    {
-      "name": "Nerds",
-      "industry": "computers",
-      "creatorId": 3,
-      "memberId": [
-        1,
-        3
-      ],
-      "id": 2
-    },
-    {
-      "name": "Angular",
-      "industry": "IT",
-      "creatorId": 1,
-      "memberId": [
-        1
-      ],
-      "id": 3
-    }
-  ]
+  "teams": []
 }

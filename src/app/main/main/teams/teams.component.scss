@@ -12,15 +12,16 @@
   display: flex;
   justify-content: space-between;
   .create-new-team-btn {
-    background-image: linear-gradient(to right, #077771, #079992);
+    background-image: linear-gradient(to right, #08837d, #079992ea);
     font-size: 2em;
     font-weight: 300;
-    border-radius: 10px;
+    border-radius: 3px 30px;
     width: 230px;
     height: 230px;
     color: white;
     transition: 0.2s;
     box-shadow: 0px 0px 15px 0px rgba(64, 224, 208, 0.15);
+    margin-top: 155px;
     animation: cardIntro 0.6s;
 
     &:hover {
@@ -52,10 +53,50 @@
   }
   .card {
     height: 200px;
-    width: 200px;
+    width: 180px;
+    padding: 20px 20px;
     margin-left: 20px;
+    margin-bottom: 20px;
     background: rgb(255, 255, 255);
     color: #444444;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.02);
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.3em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #079992;
+      padding-bottom: 2%;
+    }
+    p {
+      span {
+        text-transform: uppercase;
+        margin-left: 5px;
+        font-size: 1.2em;
+      }
+      &:nth-child(2) {
+        margin-top: 40px;
+      }
+    }
+    .cardBtn {
+      margin-left: 10px;
+      // background: #ed4c67;
+      color: white;
+      &:hover {
+        opacity: 0.9;
+      }
+      &:nth-child(1) {
+        // background: #079992;
+        width: 72px;
+      }
+    }
+    .buttons {
+      position: absolute;
+      bottom: 8%;
+      left: 10.4%;
+    }
   }
   li {
     color: white;

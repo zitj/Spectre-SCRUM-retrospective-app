@@ -15,6 +15,7 @@ export class TeamsComponent implements OnInit, OnDestroy {
 
   teams: Team[] = [];
   private getSub: Subscription = new Subscription();
+  isAdmin: boolean = false;
 
   ngOnInit(): void {
     this.getSub = this.teamsService.getTeams().subscribe((data) => {

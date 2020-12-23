@@ -15,7 +15,7 @@ $spectre-app-primary: mat-palette($mat-teal);
 $spectre-app-accent: mat-palette($mat-teal, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$spectre-app-warn: mat-palette($mat-red);
+$spectre-app-warn: mat-palette($mat-pink, 400);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
@@ -132,7 +132,8 @@ body {
   height: 50%;
 }
 .loginSuccesContainer .mat-dialog-container,
-.registerSuccessContainer .mat-dialog-container {
+.registerSuccessContainer .mat-dialog-container,
+.createTeamSuccess .mat-dialog-container {
   text-align: center;
   width: 400px;
   height: 450px;
@@ -199,6 +200,9 @@ body {
   button {
     width: 50%;
   }
+}
+.createTeamSuccess .mat-dialog-container {
+  margin-top: 85px;
 }
 .mat-select-panel {
   margin-top: 42px;

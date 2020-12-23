@@ -12,11 +12,31 @@
   </button>
   <div class="card-container">
     <mat-card class="card" *ngFor="let team of teams">
-      <h1>{{ team.name }}</h1>
-      <p>Industry: {{ team.industry }}</p>
-      <p>Number of members: {{ team.memberId.length }}</p>
-      <button mat-flat-button>Edit</button>
-      <button mat-flat-button>Delete</button>
+      <h1>Team {{ team.name }}</h1>
+      <p>
+        Industry: <span>{{ team.industry }}</span>
+      </p>
+      <p>Number of members: {{ team.memberId.length + 1 }}</p>
+      <div class="buttons">
+        <div mat-dialog-actions>
+          <button
+            color="primary"
+            class="cardBtn"
+            mat-flat-button
+            [disabled]="!isAdmin"
+          >
+            Edit
+          </button>
+          <button
+            color="warn"
+            class="cardBtn"
+            mat-flat-button
+            [disabled]="!isAdmin"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
     </mat-card>
   </div>
 </div>

@@ -20,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatList, MatListModule } from '@angular/material/list';
+import { CreateTeamSuccessComponent } from './main/teams/create-team/create-team-success/create-team-success.component';
 const routes = [
   {
     path: '',
@@ -56,6 +57,7 @@ const routes = [
     StatisticsComponent,
     MainComponent,
     CreateTeamComponent,
+    CreateTeamSuccessComponent,
   ],
   imports: [
     CommonModule,
