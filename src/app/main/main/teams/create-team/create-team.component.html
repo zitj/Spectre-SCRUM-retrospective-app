@@ -9,7 +9,7 @@
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <mat-form-field appearance="fill">
       <mat-label>Team name</mat-label>
-      <input matInput placeholder="Your team name" formControlName="teamName" />
+      <input matInput placeholder="Your team name" formControlName="name" />
       <mat-error>Team name is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
@@ -17,9 +17,24 @@
       <input
         matInput
         placeholder="Your team industry"
-        formControlName="teamIndustry"
+        formControlName="industry"
       />
       <mat-error>Team industry is required</mat-error>
+    </mat-form-field>
+
+    <!-- WORK IN PROGRESS -->
+
+    <mat-form-field appearance="fill">
+      <mat-label>Invite members</mat-label>
+      <mat-select
+        formControlName="memberId"
+        (change)="selectMembers($event)"
+        multiple
+      >
+        <mat-option *ngFor="let user of users" [value]="user.id">{{
+          user.email
+        }}</mat-option>
+      </mat-select>
     </mat-form-field>
 
     <div mat-dialog-actions>

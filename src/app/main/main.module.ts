@@ -18,6 +18,8 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatList, MatListModule } from '@angular/material/list';
 const routes = [
   {
     path: '',
@@ -67,6 +69,8 @@ const routes = [
     FormsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatSelectModule,
+    MatListModule,
     RouterModule.forChild(routes),
   ],
 })

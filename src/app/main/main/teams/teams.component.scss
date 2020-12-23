@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   .create-new-team-btn {
-    background: rgba(0, 0, 0, 0.038);
+    background-image: linear-gradient(to right, #077771, #079992);
     font-size: 2em;
     font-weight: 300;
     border-radius: 10px;
@@ -25,7 +25,6 @@
 
     &:hover {
       transform: scale(1.03);
-      color: turquoise;
       box-shadow: 0px 0px 40px 0px rgba(64, 224, 208, 0.15);
     }
     &:active {
@@ -48,12 +47,18 @@
     display: flex;
     flex-wrap: wrap;
     width: 75%;
+    border-left: 1px solid rgba(255, 255, 255, 0.219);
+    padding-left: 2.9%;
   }
   .card {
     height: 200px;
     width: 200px;
     margin-left: 20px;
     background: rgb(255, 255, 255);
+    color: #444444;
+  }
+  li {
+    color: white;
   }
 }
 @keyframes cardIntro {

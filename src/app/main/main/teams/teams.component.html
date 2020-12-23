@@ -11,11 +11,13 @@
     >
   </button>
   <div class="card-container">
-    <!-- <mat-card class="card">
-      <h1>Team name</h1>
-      <p>number of team members</p>
-      <p>creator of team</p>
-    </mat-card> -->
+    <mat-card class="card" *ngFor="let team of teams">
+      <h1>{{ team.name }}</h1>
+      <p>Industry: {{ team.industry }}</p>
+      <p>Number of members: {{ team.memberId.length }}</p>
+      <button mat-flat-button>Edit</button>
+      <button mat-flat-button>Delete</button>
+    </mat-card>
   </div>
 </div>
 <router-outlet></router-outlet>

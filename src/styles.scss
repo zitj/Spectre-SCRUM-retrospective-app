@@ -113,7 +113,8 @@ body {
   }
 }
 .registerContainer .mat-dialog-container,
-.loginContainer .mat-dialog-container {
+.loginContainer .mat-dialog-container,
+.createTeamContainer .mat-dialog-container {
   border-radius: 4px 30px;
   width: 20%;
   height: 55%;
@@ -121,10 +122,14 @@ body {
   top: 25%;
   left: 40%;
 }
-.loginContainer .mat-dialog-container {
+.loginContainer .mat-dialog-container,
+.createTeamContainer .mat-dialog-container {
   height: 43%;
   top: 29.5%;
   padding: 2% 2.5% 1%;
+}
+.createTeamContainer .mat-dialog-container {
+  height: 50%;
 }
 .loginSuccesContainer .mat-dialog-container,
 .registerSuccessContainer .mat-dialog-container {
@@ -194,4 +199,8 @@ body {
   button {
     width: 50%;
   }
+}
+.mat-select-panel {
+  margin-top: 42px;
+  margin-left: 8px;
 }

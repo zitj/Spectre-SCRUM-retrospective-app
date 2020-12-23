@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateTeamComponent } from './create-team/create-team.component';
 import { TeamsService } from '../../../teams.service';
@@ -10,7 +10,7 @@ import { Team } from '../../../team';
   templateUrl: './teams.component.html',
   styleUrls: ['./teams.component.scss'],
 })
-export class TeamsComponent implements OnInit {
+export class TeamsComponent implements OnInit, OnDestroy {
   constructor(public dialog: MatDialog, private teamsService: TeamsService) {}
 
   teams: Team[] = [];
@@ -19,8 +19,11 @@ export class TeamsComponent implements OnInit {
   ngOnInit(): void {
     this.getSub = this.teamsService.getTeams().subscribe((data) => {
       this.teams = data;
-      console.log(this.teams);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.getSub.unsubscribe();
   }
 
   openCreateTeamPanel(): void {
