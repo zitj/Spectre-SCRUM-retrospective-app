@@ -9,6 +9,7 @@ import { User } from '../../../../user';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { UsersService } from '../../../../users.service';
+import { CreateTeamSuccessComponent } from './create-team-success/create-team-success.component';
 
 @Component({
   selector: 'app-create-team',
@@ -25,35 +26,27 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
     private usersService: UsersService
   ) {}
   users: Array<User> = [];
-  cars = [
-    { name: 'volvo', id: 1 },
-    { name: 'lada', id: 2 },
-    { name: 'mercedes', id: 3 },
-  ];
 
   private getSub: Subscription = new Subscription();
   private postSub: Subscription = new Subscription();
   formGroup: FormGroup = new FormGroup({});
 
   ngOnInit(): void {
-    this.getUsers();
     this.formGroup = this.formBuilder.group({
       name: ['', [Validators.required]],
       industry: ['', [Validators.required]],
       creatorId: JSON.parse(localStorage.getItem('UserLoggedIn') || '{}').id,
       memberId: '',
     });
+
+    this.getSub = this.usersService.getUsers().subscribe((data) => {
+      this.users = data;
+    });
   }
 
   ngOnDestroy(): void {
     this.postSub.unsubscribe();
-  }
-
-  getUsers(): void {
-    this.getSub = this.usersService.getUsers().subscribe((data) => {
-      this.users = data;
-      console.log(this.users);
-    });
+    this.getSub.unsubscribe();
   }
 
   selectMembers(event: any): void {
@@ -61,11 +54,6 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
       selectedMember: event.target.value,
     });
   }
-
-  // onChange(event: any): void {
-  //   if (event.option.selected) {
-  //   }
-  // }
 
   refresh(): void {
     this.router
@@ -81,8 +69,9 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
     this.postSub = this.teamsService
       .createTeam(this.formGroup.value)
       .subscribe((data) => {
-        alert('You have successfully created a new team!');
-        this.dialog.closeAll();
+        this.dialog.open(CreateTeamSuccessComponent, {
+          panelClass: 'createTeamSuccess',
+        });
         this.refresh();
       });
   }
