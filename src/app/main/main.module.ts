@@ -25,7 +25,7 @@ const routes = [
   {
     path: '',
     component: MainComponent,
-    canActivate: [MainGuard],
+    canLoad: [MainGuard],
     children: [
       {
         path: 'dashboards',
