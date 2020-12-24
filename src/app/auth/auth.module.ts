@@ -24,7 +24,7 @@ const routes = [
   {
     path: '',
     component: IndexComponent,
-    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
   },
 ];
 
