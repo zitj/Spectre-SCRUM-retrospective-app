@@ -1,3 +1,5 @@
+@import "../../../../variables";
+
 @for $i from 1 through 10 {
   .card:nth-child(1n + #{$i}) {
     animation: cardIntro $i/4 + 0s;
@@ -12,7 +14,7 @@
   display: flex;
   justify-content: space-between;
   .create-new-team-btn {
-    background-image: linear-gradient(to right, #08837d, #079992ea);
+    background-image: linear-gradient(to right, #08837d, $spectre-light-green);
     font-size: 2em;
     font-weight: 300;
     border-radius: 3px 30px;
@@ -58,7 +60,7 @@
     margin-left: 20px;
     margin-bottom: 20px;
     background: rgb(255, 255, 255);
-    color: #444444;
+    color: $spectre-text;
     transition: 0.2s ease-in-out;
     &:hover {
       transform: scale(1.02);
@@ -67,7 +69,7 @@
       text-align: center;
       font-size: 1.3em;
       text-transform: uppercase;
-      border-bottom: 1px solid #079992;
+      border-bottom: 1px solid $spectre-light-green;
       padding-bottom: 2%;
     }
     p {

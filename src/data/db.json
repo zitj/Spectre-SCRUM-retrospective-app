@@ -29,5 +29,14 @@
       "id": 4
     }
   ],
-  "teams": []
+  "teams": [
+    {
+      "name": "EKV",
+      "industry": "music",
+      "creatorId": 1,
+      "memberId": "",
+      "isAdmin": false,
+      "id": 1
+    }
+  ]
 }

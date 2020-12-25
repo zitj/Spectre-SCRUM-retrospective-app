@@ -1,3 +1,5 @@
+@import "../../../../variables";
+
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -8,7 +10,7 @@ mat-toolbar {
   left: 15%;
   border-radius: 70px 3px;
   padding: 2% 4% 2% 2.5%;
-  color: #414142;
+  color: $spectre-text;
   animation: headerIntro 0.3s;
   @keyframes headerIntro {
     0% {
@@ -30,6 +32,7 @@ mat-toolbar {
     margin-top: 3px;
     font-family: "Audiowide", cursive;
     font-size: 1.5em;
+    color: $spectre-logo;
   }
   svg,
   span,
@@ -49,7 +52,7 @@ mat-toolbar {
     outline: none;
     font-family: "Raleway", sans-serif;
     margin-right: 15px;
-    color: #414142;
+    color: $spectre-text;
     transition: 0.2s ease-in-out;
     &:hover,
     &.active {
@@ -57,7 +60,7 @@ mat-toolbar {
       font-size: 1.1em;
     }
     &.active {
-      border-bottom: 2px solid #09afa7;
+      border-bottom: 2px solid $spectre-light-green;
     }
     &:nth-child(4) {
       margin-left: 40px;
@@ -66,7 +69,7 @@ mat-toolbar {
       position: relative;
       &:hover {
         border-bottom: none;
-        color: #09afa7;
+        color: $spectre-light-green;
       }
     }
   }

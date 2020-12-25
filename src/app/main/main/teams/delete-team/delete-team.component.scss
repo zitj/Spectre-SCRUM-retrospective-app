@@ -1,6 +1,8 @@
+@import "../../../../../variables";
+
 .wrapper {
   text-align: center;
-  color: #444444;
+  color: $spectre-text;
   p {
     font-size: 1.3em;
     line-height: 25px;
@@ -15,7 +17,7 @@
     .st0,
     .st1 {
       fill: white;
-      stroke: #ec407a;
+      stroke: $spectre-warn-pink;
       stroke-width: 0.5;
       fill: white;
       stroke-dasharray: 240;
@@ -57,16 +59,16 @@
     outline: none;
     cursor: pointer;
     border-radius: 5px;
-    background: #ec407a;
-    border: 1px solid #ec407a;
+    background: $spectre-warn-pink;
+    border: 1px solid $spectre-warn-pink;
     color: white;
     &:hover {
       opacity: 0.9;
     }
     &:nth-child(2) {
       background: none;
-      color: #444444;
-      border: 1px solid #444444;
+      color: $spectre-text;
+      border: 1px solid $spectre-text;
     }
   }
   .buttons {

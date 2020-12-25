@@ -35,7 +35,7 @@ $spectre-app-theme: mat-light-theme(
 @include angular-material-theme($spectre-app-theme);
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Raleway:wght@300;400;700&display=swap");
 /* You can add global styles to this file, and also import other style files */
-$spectre-light-green: #079992;
+@import "./variables";
 
 html,
 body {
@@ -43,7 +43,11 @@ body {
 }
 body {
   margin: 0;
-  background: linear-gradient(120deg, #0a3d62, #079992 250%);
+  background: linear-gradient(
+    120deg,
+    $spectre-deep-blue,
+    $spectre-light-green 250%
+  );
   font-family: Roboto, "Helvetica Neue", sans-serif;
   height: 100vh;
   overflow: hidden;
@@ -58,16 +62,16 @@ body {
     color: red;
   }
   .hint {
-    color: #079992;
+    color: $spectre-light-green;
   }
   .credErr {
     margin-top: -15px;
     margin-bottom: 10px;
     margin: -12px 0px 10px 10px;
     font-size: 0.8em;
-    animation: credIntro 0.2s;
-    color: #ff7b00;
-    @keyframes credIntro {
+    animation: credErrIntro 0.2s;
+    color: $spectre-warn-pink;
+    @keyframes credErrIntro {
       0% {
         margin-top: -20px;
         opacity: 0;
@@ -103,7 +107,7 @@ body {
   }
 
   .btn {
-    background: #079992;
+    background: $spectre-light-green;
     color: white;
     border-radius: 1px 80px;
     height: 45px;
@@ -153,7 +157,7 @@ body {
     left: 0%;
     top: 5%;
     transform: scale(0.3);
-    stroke: #079992;
+    stroke: $spectre-light-green;
     stroke-width: 1;
     fill: white;
     stroke-dasharray: 240;
@@ -164,7 +168,7 @@ body {
     }
     .st1 {
       fill: white;
-      stroke: #079992;
+      stroke: $spectre-light-green;
       stroke-width: 1;
       stroke-dasharray: 240;
       stroke-dashoffset: 0;
@@ -188,7 +192,7 @@ body {
     width: 60%;
     margin: 55% auto 0;
     color: white;
-    background: #079992;
+    background: $spectre-light-green;
     height: 50px;
     border-radius: 1px 20px;
     transition: 0.2s;

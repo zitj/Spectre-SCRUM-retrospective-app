@@ -1,3 +1,5 @@
+@import "../../../variables";
+
 .wrapper {
   .container {
     text-align: center;
@@ -91,7 +93,7 @@
         text-transform: uppercase;
         margin-bottom: 0.7em;
         margin-top: 0.7em;
-        color: #59595a;
+        color: $spectre-logo;
         letter-spacing: 3px;
         margin-left: -30px;
         animation: textIntro 1.3s ease-in;
@@ -116,12 +118,20 @@
       transition: 0.17s ease-in-out;
       animation: buttonIntro 0.9s;
       &:nth-child(1) {
-        background-image: linear-gradient(to right, #0a3d62, #079992);
+        background-image: linear-gradient(
+          to right,
+          $spectre-deep-blue,
+          $spectre-light-green
+        );
         border-radius: 4px 0px 0px 30px;
         transform-origin: left;
       }
       &:nth-child(2) {
-        background-image: linear-gradient(to left, #0a3d62, #079992);
+        background-image: linear-gradient(
+          to left,
+          $spectre-deep-blue,
+          $spectre-light-green
+        );
         border-radius: 0px 30px 4px 0px;
         transform-origin: right;
       }
