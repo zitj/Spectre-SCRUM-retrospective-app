@@ -22,5 +22,30 @@
       "id": 3
     }
   ],
-  "teams": []
+  "teams": [
+    {
+      "name": "Angular",
+      "industry": "it",
+      "creatorId": 1,
+      "memberId": "",
+      "isAdmin": false,
+      "id": 1
+    },
+    {
+      "name": "Lawyers",
+      "industry": "law",
+      "creatorId": 2,
+      "memberId": "",
+      "isAdmin": false,
+      "id": 2
+    },
+    {
+      "name": "prosveta",
+      "industry": "education",
+      "creatorId": 3,
+      "memberId": "",
+      "isAdmin": false,
+      "id": 3
+    }
+  ]
 }

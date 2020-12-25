@@ -4,4 +4,5 @@ export interface Team {
   industry: string;
   memberId: Array<Number>;
   creatorId: number;
+  isAdmin: boolean;
 }

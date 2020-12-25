@@ -36,6 +36,7 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
       industry: ['', [Validators.required]],
       creatorId: JSON.parse(localStorage.getItem('UserLoggedIn') || '{}').id,
       memberId: '',
+      isAdmin: false,
     });
 
     this.getSub = this.usersService.getUsers().subscribe((data) => {

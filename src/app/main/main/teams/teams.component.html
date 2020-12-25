@@ -23,7 +23,7 @@
             color="primary"
             class="cardBtn"
             mat-flat-button
-            [disabled]="!isAdmin"
+            [disabled]="!this.team.isAdmin"
           >
             Edit
           </button>
@@ -31,7 +31,7 @@
             color="warn"
             class="cardBtn"
             mat-flat-button
-            [disabled]="!isAdmin"
+            [disabled]="!this.team.isAdmin"
           >
             Delete
           </button>

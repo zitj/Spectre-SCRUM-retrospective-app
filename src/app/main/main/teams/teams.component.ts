@@ -12,14 +12,19 @@ import { Team } from '../../../team';
 })
 export class TeamsComponent implements OnInit, OnDestroy {
   constructor(public dialog: MatDialog, private teamsService: TeamsService) {}
-
+  userLoggedIn = JSON.parse(localStorage.getItem('UserLoggedIn') || '{}');
   teams: Team[] = [];
   private getSub: Subscription = new Subscription();
-  isAdmin: boolean = false;
 
   ngOnInit(): void {
     this.getSub = this.teamsService.getTeams().subscribe((data) => {
       this.teams = data;
+      for (let team of this.teams) {
+        if (team.creatorId === this.userLoggedIn.id) {
+          console.log('ovo radi!');
+          team.isAdmin = true;
+        }
+      }
     });
   }
 
