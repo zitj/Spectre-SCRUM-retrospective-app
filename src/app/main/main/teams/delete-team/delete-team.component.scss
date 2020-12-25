@@ -57,6 +57,7 @@
     padding: 2px 30px;
     margin-left: 10px;
     outline: none;
+    transition: 0.2s ease-in-out;
     cursor: pointer;
     border-radius: 5px;
     background: $spectre-warn-pink;
@@ -69,6 +70,10 @@
       background: none;
       color: $spectre-text;
       border: 1px solid $spectre-text;
+      &:hover {
+        color: white;
+        background: $spectre-text;
+      }
     }
   }
   .buttons {

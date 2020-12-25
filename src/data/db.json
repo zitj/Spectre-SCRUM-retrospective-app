@@ -27,6 +27,13 @@
       "email": "ognjen@gmail.com",
       "password": "1111",
       "id": 4
+    },
+    {
+      "firstName": "Zora",
+      "lastName": "Veljkovic",
+      "email": "zonale@gmail.com",
+      "password": "11",
+      "id": 5
     }
   ],
   "teams": [
