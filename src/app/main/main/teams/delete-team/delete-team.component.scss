@@ -1,0 +1,77 @@
+.wrapper {
+  text-align: center;
+  color: #444444;
+  p {
+    font-size: 1.3em;
+    line-height: 25px;
+    text-transform: uppercase;
+  }
+  svg {
+    transform: scale(0.2);
+    position: absolute;
+    left: 1%;
+    top: -38%;
+    animation: warn 0.9s ease-in-out infinite;
+    .st0,
+    .st1 {
+      fill: white;
+      stroke: #ec407a;
+      stroke-width: 0.5;
+      fill: white;
+      stroke-dasharray: 240;
+      stroke-dashoffset: 0;
+      animation: check 0.9s ease-in-out infinite;
+    }
+
+    .st1 {
+      stroke-width: 1.3;
+    }
+    @keyframes check {
+      0% {
+        stroke-dashoffset: 240;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+    @keyframes warn {
+      0% {
+        transform: scale(0.2);
+        opacity: 0.3;
+      }
+
+      50% {
+        transform: scale(0.3);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0.2);
+        opacity: 0;
+      }
+    }
+  }
+
+  .deletePanelBtn {
+    padding: 2px 30px;
+    margin-left: 10px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #ec407a;
+    border: 1px solid #ec407a;
+    color: white;
+    &:hover {
+      opacity: 0.9;
+    }
+    &:nth-child(2) {
+      background: none;
+      color: #444444;
+      border: 1px solid #444444;
+    }
+  }
+  .buttons {
+    position: absolute;
+    bottom: 10%;
+    left: 23%;
+  }
+}

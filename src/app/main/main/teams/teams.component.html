@@ -32,6 +32,7 @@
             class="cardBtn"
             mat-flat-button
             [disabled]="!this.team.isAdmin"
+            (click)="openDeleteTeamPanel()"
           >
             Delete
           </button>

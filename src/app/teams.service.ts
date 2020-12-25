@@ -18,4 +18,7 @@ export class TeamsService {
   createTeam(arg: Team): Observable<Team[]> {
     return this.http.post<Team[]>(this.url + 'teams', arg);
   }
+  deleteTeam(teamId: number): Observable<Team[]> {
+    return this.http.delete<Team[]>(this.url + 'teams' + `/${teamId}`);
+  }
 }

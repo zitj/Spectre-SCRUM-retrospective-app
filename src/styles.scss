@@ -35,6 +35,8 @@ $spectre-app-theme: mat-light-theme(
 @include angular-material-theme($spectre-app-theme);
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Raleway:wght@300;400;700&display=swap");
 /* You can add global styles to this file, and also import other style files */
+$spectre-light-green: #079992;
+
 html,
 body {
   height: 100%;
@@ -114,7 +116,8 @@ body {
 }
 .registerContainer .mat-dialog-container,
 .loginContainer .mat-dialog-container,
-.createTeamContainer .mat-dialog-container {
+.createTeamContainer .mat-dialog-container,
+.deleteTeamContainer .mat-dialog-container {
   border-radius: 4px 30px;
   width: 20%;
   height: 55%;
@@ -130,6 +133,12 @@ body {
 }
 .createTeamContainer .mat-dialog-container {
   height: 50%;
+}
+.deleteTeamContainer .mat-dialog-container {
+  height: 25%;
+  top: 40%;
+  width: 22%;
+  padding: 1.7% 1.25%;
 }
 .loginSuccesContainer .mat-dialog-container,
 .registerSuccessContainer .mat-dialog-container,

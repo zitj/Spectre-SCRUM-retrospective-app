@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatList, MatListModule } from '@angular/material/list';
 import { CreateTeamSuccessComponent } from './main/teams/create-team/create-team-success/create-team-success.component';
+import { DeleteTeamComponent } from './main/teams/delete-team/delete-team.component';
 const routes = [
   {
     path: '',
@@ -58,6 +59,7 @@ const routes = [
     MainComponent,
     CreateTeamComponent,
     CreateTeamSuccessComponent,
+    DeleteTeamComponent,
   ],
   imports: [
     CommonModule,

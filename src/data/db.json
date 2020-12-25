@@ -20,32 +20,14 @@
       "email": "bavelj@gmail.com",
       "password": "222",
       "id": 3
+    },
+    {
+      "firstName": "Ognjen",
+      "lastName": "Veljkovic",
+      "email": "ognjen@gmail.com",
+      "password": "1111",
+      "id": 4
     }
   ],
-  "teams": [
-    {
-      "name": "Angular",
-      "industry": "it",
-      "creatorId": 1,
-      "memberId": "",
-      "isAdmin": false,
-      "id": 1
-    },
-    {
-      "name": "Lawyers",
-      "industry": "law",
-      "creatorId": 2,
-      "memberId": "",
-      "isAdmin": false,
-      "id": 2
-    },
-    {
-      "name": "prosveta",
-      "industry": "education",
-      "creatorId": 3,
-      "memberId": "",
-      "isAdmin": false,
-      "id": 3
-    }
-  ]
+  "teams": []
 }

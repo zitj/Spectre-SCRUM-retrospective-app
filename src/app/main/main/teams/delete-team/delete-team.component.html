@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <p>delete team {{ teamName }}?</p>
+  <svg viewBox="0 0 50 50">
+    <path
+      class="st0"
+      d="M25,9.19h12.27c2.1,0,3.41,2.27,2.36,4.09L33.5,23.91l-6.13,10.63c-1.05,1.82-3.67,1.82-4.72,0L16.5,23.91
+		l-6.13-10.63c-1.05-1.82,0.26-4.09,2.36-4.09H25z"
+    />
+    <line class="st1" x1="25" y1="13" x2="25" y2="27" />
+    <line class="st1" x1="25" y1="29" x2="25" y2="30" />
+  </svg>
+
+  <div mat-dialog-actions>
+    <div class="buttons">
+      <button class="deletePanelBtn" mat-flat-button (click)="deleteTeam()">
+        Delete
+      </button>
+      <button
+        class="deletePanelBtn"
+        mat-flat-button
+        (click)="dialog.closeAll()"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

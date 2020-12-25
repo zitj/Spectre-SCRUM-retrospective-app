@@ -4,6 +4,7 @@ import { CreateTeamComponent } from './create-team/create-team.component';
 import { TeamsService } from '../../../teams.service';
 import { Subscription } from 'rxjs';
 import { Team } from '../../../team';
+import { DeleteTeamComponent } from './delete-team/delete-team.component';
 
 @Component({
   selector: 'app-teams',
@@ -21,7 +22,6 @@ export class TeamsComponent implements OnInit, OnDestroy {
       this.teams = data;
       for (let team of this.teams) {
         if (team.creatorId === this.userLoggedIn.id) {
-          console.log('ovo radi!');
           team.isAdmin = true;
         }
       }
@@ -32,6 +32,11 @@ export class TeamsComponent implements OnInit, OnDestroy {
     this.getSub.unsubscribe();
   }
 
+  openDeleteTeamPanel() {
+    this.dialog.open(DeleteTeamComponent, {
+      panelClass: 'deleteTeamContainer',
+    });
+  }
   openCreateTeamPanel(): void {
     this.dialog.open(CreateTeamComponent, {
       panelClass: 'createTeamContainer',
