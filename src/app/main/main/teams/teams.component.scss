@@ -82,19 +82,17 @@
     }
     .cardBtn {
       margin-left: 10px;
-      // background: #ed4c67;
       color: white;
       &:hover {
         opacity: 0.9;
       }
       &:nth-child(1) {
-        // background: #079992;
         width: 72px;
       }
     }
     .buttons {
       position: absolute;
-      bottom: 8%;
+      bottom: 9%;
       left: 10.4%;
     }
   }

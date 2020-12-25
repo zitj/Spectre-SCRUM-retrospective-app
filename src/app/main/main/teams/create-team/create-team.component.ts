@@ -4,7 +4,6 @@ import { FormGroup, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { TeamsService } from '../../../../teams.service';
 import { Subscription } from 'rxjs';
-import { Team } from '../../../../team';
 import { User } from '../../../../user';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -72,7 +71,6 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
         this.dialog.open(CreateTeamSuccessComponent, {
           panelClass: 'createTeamSuccess',
         });
-        this.refresh();
       });
   }
 }
