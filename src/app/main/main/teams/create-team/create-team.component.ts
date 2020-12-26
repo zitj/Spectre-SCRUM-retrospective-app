@@ -33,6 +33,8 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
   users: Array<User> = [];
   teams: Array<Team> = [];
 
+  filteredUsers: Array<User> = [];
+
   private getUsers: Subscription = new Subscription();
   private getTeams: Subscription = new Subscription();
   private postSub: Subscription = new Subscription();
@@ -49,8 +51,13 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
     });
 
     this.getUsers = this.usersService.getUsers().subscribe((data) => {
-      this.users = data;
+      this.users = data.filter(
+        (user) =>
+          user.id !==
+          JSON.parse(localStorage.getItem('UserLoggedIn') || '{}').id
+      );
     });
+
     this.getTeams = this.teamsService.getTeams().subscribe((data) => {
       this.teams = data;
     });
@@ -66,7 +73,7 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
     return (control: AbstractControl): { [key: string]: boolean } | null => {
       for (let team of this.teams) {
         if (team.name.toLowerCase() == control.value.toLowerCase()) {
-          this.teamNameErrMsg = 'This team name already exists';
+          this.teamNameErrMsg = 'This team already exists';
           return { uniqueTeamName: false };
         }
       }
