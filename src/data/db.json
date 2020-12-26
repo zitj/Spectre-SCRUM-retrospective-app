@@ -29,10 +29,10 @@
       "id": 4
     },
     {
-      "firstName": "Zora",
-      "lastName": "Veljkovic",
-      "email": "zonale@gmail.com",
-      "password": "11",
+      "firstName": "Dusan",
+      "lastName": "Antic",
+      "email": "dule@gmail.com",
+      "password": "dule",
       "id": 5
     }
   ],
@@ -44,6 +44,14 @@
       "memberId": "",
       "isAdmin": false,
       "id": 1
+    },
+    {
+      "name": "Barcino",
+      "industry": "tourism",
+      "creatorId": 5,
+      "memberId": "",
+      "isAdmin": false,
+      "id": 2
     }
   ]
 }
