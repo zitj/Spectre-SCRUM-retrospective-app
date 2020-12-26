@@ -217,7 +217,9 @@ body {
 .createTeamSuccess .mat-dialog-container {
   margin-top: 85px;
 }
-.mat-select-panel {
+.mat-select-panel,
+.ng-trigger-transformPanel {
+  position: absolute;
   margin-top: 42px;
   margin-left: 8px;
 }

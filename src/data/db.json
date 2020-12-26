@@ -34,6 +34,13 @@
       "email": "dule@gmail.com",
       "password": "dule",
       "id": 5
+    },
+    {
+      "firstName": "Petar",
+      "lastName": "Antic",
+      "email": "pera@gmail.com",
+      "password": "pera",
+      "id": 6
     }
   ],
   "teams": [
