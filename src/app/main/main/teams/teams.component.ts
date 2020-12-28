@@ -5,6 +5,7 @@ import { TeamsService } from '../../../teams.service';
 import { Subscription } from 'rxjs';
 import { Team } from '../../../team';
 import { DeleteTeamComponent } from './delete-team/delete-team.component';
+import { AlertComponent } from './create-team/alert/alert.component';
 
 @Component({
   selector: 'app-teams',
@@ -32,14 +33,31 @@ export class TeamsComponent implements OnInit, OnDestroy {
     this.getSub.unsubscribe();
   }
 
-  openDeleteTeamPanel() {
+  openEditTeamPanel(): void {
+    this.dialog.open(CreateTeamComponent, {
+      panelClass: 'createTeamContainer',
+    });
+    this.teamsService.panel = 'Edit';
+  }
+
+  openDeleteTeamPanel(): void {
     this.dialog.open(DeleteTeamComponent, {
       panelClass: 'deleteTeamContainer',
     });
   }
   openCreateTeamPanel(): void {
+    for (let team of this.teams) {
+      if (team.creatorId === this.userLoggedIn.id) {
+        this.dialog.open(AlertComponent, {
+          panelClass: 'alert',
+        });
+
+        return;
+      }
+    }
     this.dialog.open(CreateTeamComponent, {
       panelClass: 'createTeamContainer',
     });
+    this.teamsService.panel = 'Create';
   }
 }

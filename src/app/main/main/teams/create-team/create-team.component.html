@@ -1,5 +1,5 @@
 <div class="register-form form">
-  <h1 mat-dialog-title>Create new team</h1>
+  <h1 mat-dialog-title>{{ heading }} team</h1>
   <svg (click)="dialog.closeAll()" height="24" viewBox="0 0 24 24" width="24">
     <path d="M0 0h24v24H0z" fill="none" />
     <path
@@ -23,7 +23,7 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Invite members</mat-label>
+      <mat-label>Select members</mat-label>
       <mat-select
         formControlName="memberId"
         (change)="selectMembers($event)"

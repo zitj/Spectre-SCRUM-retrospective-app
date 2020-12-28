@@ -30,6 +30,7 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
     private location: Location,
     private usersService: UsersService
   ) {}
+
   users: Array<User> = [];
   teams: Array<Team> = [];
 
@@ -38,28 +39,37 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
   private getUsers: Subscription = new Subscription();
   private getTeams: Subscription = new Subscription();
   private postSub: Subscription = new Subscription();
+  private updateSub: Subscription = new Subscription();
+
+  userLoggedIn: User = JSON.parse(localStorage.getItem('UserLoggedIn') || '{}');
   formGroup: FormGroup = new FormGroup({});
   teamNameErrMsg: string = 'Team name is required';
+  teamId: number = 99;
+  heading: string = '';
 
   ngOnInit(): void {
-    this.formGroup = this.formBuilder.group({
-      name: ['', [Validators.required, this.uniqueTeamName(this.teams)]],
-      industry: ['', [Validators.required]],
-      creatorId: JSON.parse(localStorage.getItem('UserLoggedIn') || '{}').id,
-      memberId: '',
-      isAdmin: false,
-    });
-
-    this.getUsers = this.usersService.getUsers().subscribe((data) => {
-      this.users = data.filter(
-        (user) =>
-          user.id !==
-          JSON.parse(localStorage.getItem('UserLoggedIn') || '{}').id
-      );
-    });
+    this.heading = this.teamsService.panel;
 
     this.getTeams = this.teamsService.getTeams().subscribe((data) => {
       this.teams = data;
+
+      for (let team of this.teams) {
+        if (team.creatorId === this.userLoggedIn.id) {
+          this.teamId = team.id;
+        }
+      }
+    });
+
+    this.getUsers = this.usersService.getUsers().subscribe((data) => {
+      this.users = data.filter((user) => user.id !== this.userLoggedIn.id);
+    });
+
+    this.formGroup = this.formBuilder.group({
+      name: ['', [Validators.required, this.uniqueTeamName(this.teams)]],
+      industry: ['', [Validators.required]],
+      creatorId: this.userLoggedIn.id,
+      memberId: [''],
+      isAdmin: false,
     });
   }
 
@@ -67,6 +77,7 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
     this.postSub.unsubscribe();
     this.getUsers.unsubscribe();
     this.getTeams.unsubscribe();
+    this.updateSub.unsubscribe();
   }
 
   uniqueTeamName(teams: Team[]): ValidatorFn {
@@ -102,12 +113,22 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
-    this.postSub = this.teamsService
-      .createTeam(this.formGroup.value)
-      .subscribe((data) => {
-        this.dialog.open(CreateTeamSuccessComponent, {
-          panelClass: 'createTeamSuccess',
+    if (this.teamsService.panel === 'Edit') {
+      this.updateSub = this.teamsService
+        .updateTeam(this.teamId, this.formGroup.value)
+        .subscribe((data) => {});
+      this.dialog.closeAll();
+      this.refresh();
+    }
+
+    if (this.teamsService.panel === 'Create') {
+      this.postSub = this.teamsService
+        .createTeam(this.formGroup.value)
+        .subscribe((data) => {
+          this.dialog.open(CreateTeamSuccessComponent, {
+            panelClass: 'createTeamSuccess',
+          });
         });
-      });
+    }
   }
 }

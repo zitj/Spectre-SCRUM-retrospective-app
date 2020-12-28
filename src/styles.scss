@@ -48,7 +48,7 @@ body {
     $spectre-deep-blue,
     $spectre-light-green 250%
   );
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Raleway", sans-serif;
   height: 100vh;
   overflow: hidden;
 }
@@ -121,7 +121,8 @@ body {
 .registerContainer .mat-dialog-container,
 .loginContainer .mat-dialog-container,
 .createTeamContainer .mat-dialog-container,
-.deleteTeamContainer .mat-dialog-container {
+.deleteTeamContainer .mat-dialog-container,
+.alert .mat-dialog-container {
   border-radius: 4px 30px;
   width: 20%;
   height: 55%;
@@ -138,7 +139,9 @@ body {
 .createTeamContainer .mat-dialog-container {
   height: 50%;
 }
-.deleteTeamContainer .mat-dialog-container {
+
+.deleteTeamContainer .mat-dialog-container,
+.alert .mat-dialog-container {
   height: 25%;
   top: 40%;
   width: 22%;
@@ -217,6 +220,7 @@ body {
 .createTeamSuccess .mat-dialog-container {
   margin-top: 85px;
 }
+
 .mat-select-panel,
 .ng-trigger-transformPanel {
   position: absolute;

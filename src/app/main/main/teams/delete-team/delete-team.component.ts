@@ -43,7 +43,7 @@ export class DeleteTeamComponent implements OnInit, OnDestroy {
     this.delSub.unsubscribe();
   }
 
-  deleteTeam() {
+  deleteTeam(): void {
     this.delSub = this.teamsService
       .deleteTeam(this.teamId)
       .subscribe((data) => {

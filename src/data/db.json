@@ -41,17 +41,16 @@
       "email": "pera@gmail.com",
       "password": "pera",
       "id": 6
+    },
+    {
+      "firstName": "Stefan",
+      "lastName": "Jovanovic",
+      "email": "ceke@gmail.com",
+      "password": "ceke",
+      "id": 7
     }
   ],
   "teams": [
-    {
-      "name": "EKV",
-      "industry": "music",
-      "creatorId": 1,
-      "memberId": "",
-      "isAdmin": false,
-      "id": 1
-    },
     {
       "name": "Barcino",
       "industry": "tourism",
@@ -59,6 +58,39 @@
       "memberId": "",
       "isAdmin": false,
       "id": 2
+    },
+    {
+      "name": "Nova travel",
+      "industry": "tourism",
+      "creatorId": 6,
+      "memberId": "",
+      "isAdmin": false,
+      "id": 3
+    },
+    {
+      "name": "Benu",
+      "industry": "farmacy",
+      "creatorId": 7,
+      "memberId": [
+        1
+      ],
+      "isAdmin": false,
+      "id": 5
+    },
+    {
+      "name": "Angular",
+      "industry": "it",
+      "creatorId": 1,
+      "memberId": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "isAdmin": false,
+      "id": 6
     }
   ]
 }

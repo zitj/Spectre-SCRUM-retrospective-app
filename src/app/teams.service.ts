@@ -9,6 +9,7 @@ import { environment } from '../environments/environment';
 })
 export class TeamsService {
   url = environment.url;
+  panel: string = '';
 
   constructor(public http: HttpClient) {}
 
@@ -20,5 +21,8 @@ export class TeamsService {
   }
   deleteTeam(teamId: number): Observable<Team[]> {
     return this.http.delete<Team[]>(this.url + 'teams' + `/${teamId}`);
+  }
+  updateTeam(teamId: number, arg: Team): Observable<Team[]> {
+    return this.http.put<Team[]>(this.url + 'teams' + `/${teamId}`, arg);
   }
 }

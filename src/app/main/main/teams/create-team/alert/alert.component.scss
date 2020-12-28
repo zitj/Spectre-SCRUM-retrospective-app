@@ -1,0 +1,60 @@
+@import "../../../../../../variables";
+
+h1,
+button {
+  text-align: center;
+}
+h1 {
+  font-size: 1.4em;
+}
+button {
+  background: $spectre-light-green;
+  color: white;
+  width: 20%;
+  height: 35px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 11%;
+  left: 40.5%;
+  transition: 0.2s ease-in-out;
+}
+svg {
+  transform: scale(0.18);
+  position: absolute;
+  left: 1%;
+  top: -38%;
+  animation: alert 0.7s ease-in-out infinite;
+  .st0,
+  .st1,
+  .st2 {
+    fill: white;
+    stroke: $spectre-warn-pink;
+    stroke-width: 1;
+    fill: white;
+    stroke-dasharray: 240;
+    stroke-dashoffset: 0;
+    animation: block 0.7s ease-in;
+  }
+
+  @keyframes block {
+    0% {
+      stroke-dashoffset: 240;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes alert {
+    0% {
+      transform: scale(0.18);
+    }
+
+    50% {
+      transform: scale(0.2);
+    }
+    100% {
+      transform: scale(0.18);
+    }
+  }
+}
