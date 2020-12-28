@@ -78,16 +78,13 @@
       "id": 5
     },
     {
-      "name": "Angular",
+      "name": "React",
       "industry": "it",
       "creatorId": 1,
       "memberId": [
         2,
         3,
-        4,
-        5,
-        6,
-        7
+        4
       ],
       "isAdmin": false,
       "id": 6
