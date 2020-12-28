@@ -22,19 +22,20 @@ export class TeamsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getSub = this.teamsService.getTeams().subscribe((data) => {
       this.teams = data;
-
-      this.myTeam = this.teams.filter(
-        (team) => team.creatorId == this.userLoggedIn.id
-      );
-      this.teams = this.teams.filter(
-        (team) => team.creatorId !== this.userLoggedIn.id
-      );
-      this.teams.push(this.myTeam[0]);
-      this.teams.reverse();
-
       for (let team of this.teams) {
         if (team.creatorId === this.userLoggedIn.id) {
           team.isAdmin = true;
+
+          this.myTeam = this.teams.filter(
+            (t) => t.creatorId == this.userLoggedIn.id
+          );
+
+          this.teams = this.teams.filter(
+            (t) => t.creatorId !== this.userLoggedIn.id
+          );
+
+          this.teams.push(this.myTeam[0]);
+          this.teams.reverse();
         }
       }
     });

@@ -4,13 +4,14 @@
   flex: 1 1 auto;
 }
 mat-toolbar {
-  width: 70%;
+  width: 80%;
   position: absolute;
   top: 3%;
-  left: 15%;
+  left: 10%;
   border-radius: 70px 3px;
   padding: 2% 4% 2% 2.5%;
-  color: $spectre-text;
+  color: white;
+  background: none;
   animation: headerIntro 0.3s;
   @keyframes headerIntro {
     0% {
@@ -32,7 +33,7 @@ mat-toolbar {
     margin-top: 3px;
     font-family: "Audiowide", cursive;
     font-size: 1.5em;
-    color: $spectre-logo;
+    color: white;
   }
   svg,
   span,
@@ -52,7 +53,7 @@ mat-toolbar {
     outline: none;
     font-family: "Raleway", sans-serif;
     margin-right: 15px;
-    color: $spectre-text;
+    color: white;
     transition: 0.2s ease-in-out;
     &:hover,
     &.active {

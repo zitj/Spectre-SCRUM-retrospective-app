@@ -6,88 +6,16 @@
       "email": "avelj@gmail.com",
       "password": "1234",
       "id": 1
-    },
-    {
-      "firstName": "Ivan",
-      "lastName": "Veljkovic",
-      "email": "ivelj@gmail.com",
-      "password": "123",
-      "id": 2
-    },
-    {
-      "firstName": "Branislav",
-      "lastName": "Veljkovic",
-      "email": "bavelj@gmail.com",
-      "password": "222",
-      "id": 3
-    },
-    {
-      "firstName": "Ognjen",
-      "lastName": "Veljkovic",
-      "email": "ognjen@gmail.com",
-      "password": "1111",
-      "id": 4
-    },
-    {
-      "firstName": "Dusan",
-      "lastName": "Antic",
-      "email": "dule@gmail.com",
-      "password": "dule",
-      "id": 5
-    },
-    {
-      "firstName": "Petar",
-      "lastName": "Antic",
-      "email": "pera@gmail.com",
-      "password": "pera",
-      "id": 6
-    },
-    {
-      "firstName": "Stefan",
-      "lastName": "Jovanovic",
-      "email": "ceke@gmail.com",
-      "password": "ceke",
-      "id": 7
     }
   ],
   "teams": [
     {
-      "name": "Barcino",
-      "industry": "tourism",
-      "creatorId": 5,
-      "memberId": "",
-      "isAdmin": false,
-      "id": 2
-    },
-    {
-      "name": "Nova travel",
-      "industry": "tourism",
-      "creatorId": 6,
-      "memberId": "",
-      "isAdmin": false,
-      "id": 3
-    },
-    {
-      "name": "Benu",
-      "industry": "farmacy",
-      "creatorId": 7,
-      "memberId": [
-        1
-      ],
-      "isAdmin": false,
-      "id": 5
-    },
-    {
-      "name": "React",
+      "name": "Angular",
       "industry": "it",
       "creatorId": 1,
-      "memberId": [
-        2,
-        3,
-        4
-      ],
+      "memberId": "",
       "isAdmin": false,
-      "id": 6
+      "id": 1
     }
   ]
 }
