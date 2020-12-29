@@ -1,2 +1,36 @@
 <h1 class="watermark">Dashboards</h1>
+<div class="wrapper">
+  <button
+    mat-flat-button
+    class="create-new-btn create-dash-btn"
+    (click)="openCreateDashboardPanel()"
+  >
+    <mat-icon class="dash">post_add</mat-icon> <br />
+    <span
+      >Create new<br />
+      dashboard</span
+    >
+  </button>
+  <!--  <div class="card-container">
+    <mat-card class="card" *ngFor="let dashboard of dashboards">
+      <h1>{{ dashboard.name }}</h1>
+      <p>
+        Team: <span>{{ dashboard.team }}</span>
+      </p>
+      <p>Number of members: {{ dashboard.memberId.length + 1 }}</p>
+      <div class="buttons">
+        <div mat-dialog-actions>
+          <button
+            color="primary"
+            class="cardBtn"
+            mat-flat-button
+            [disabled]="'dsa'"
+          >
+            View
+          </button>
+        </div>
+      </div>
+    </mat-card>
+  </div> -->
+</div>
 <router-outlet></router-outlet>

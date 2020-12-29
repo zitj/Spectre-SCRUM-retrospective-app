@@ -23,6 +23,7 @@ import { MatList, MatListModule } from '@angular/material/list';
 import { CreateTeamSuccessComponent } from './main/teams/create-team/create-team-success/create-team-success.component';
 import { DeleteTeamComponent } from './main/teams/delete-team/delete-team.component';
 import { AlertComponent } from './main/teams/create-team/alert/alert.component';
+import { CreateDashboardComponent } from './main/dashboards/create-dashboard/create-dashboard.component';
 const routes = [
   {
     path: '',
@@ -62,6 +63,7 @@ const routes = [
     CreateTeamSuccessComponent,
     DeleteTeamComponent,
     AlertComponent,
+    CreateDashboardComponent,
   ],
   imports: [
     CommonModule,

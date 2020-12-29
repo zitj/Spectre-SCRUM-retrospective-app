@@ -12,15 +12,18 @@ mat-toolbar {
   padding: 2% 4% 2% 2.5%;
   color: white;
   background: none;
-  animation: headerIntro 0.3s;
+  animation: headerIntro 0.6s;
   @keyframes headerIntro {
     0% {
+      opacity: 0;
       width: 0%;
+    }
+    30% {
       opacity: 0;
     }
     100% {
+      width: 80%;
       opacity: 1;
-      width: 70%;
     }
   }
   svg {
@@ -55,6 +58,7 @@ mat-toolbar {
     margin-right: 15px;
     color: white;
     transition: 0.2s ease-in-out;
+
     &:hover,
     &.active {
       font-weight: 700;
@@ -70,7 +74,6 @@ mat-toolbar {
       position: relative;
       &:hover {
         border-bottom: none;
-        color: $spectre-light-green;
       }
     }
   }

@@ -116,9 +116,10 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
     if (this.teamsService.panel === 'Edit') {
       this.updateSub = this.teamsService
         .updateTeam(this.teamId, this.formGroup.value)
-        .subscribe((data) => {});
-      this.dialog.closeAll();
-      this.refresh();
+        .subscribe((data) => {
+          this.dialog.closeAll();
+          this.refresh();
+        });
     }
 
     if (this.teamsService.panel === 'Create') {
