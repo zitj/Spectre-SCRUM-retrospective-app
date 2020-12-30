@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 export class DashboardsService {
   url = environment.url;
   myTeamId: number = 99;
+  myTeamName: string = '';
   constructor(public http: HttpClient) {}
 
   getDashboards(): Observable<Dashboard[]> {

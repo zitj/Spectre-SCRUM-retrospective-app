@@ -12,6 +12,8 @@ import { Team } from '../../../../team';
 import { Subscription } from 'rxjs';
 import { DashboardsService } from '../../../../dashboards.service';
 import { TeamsService } from '../../../../teams.service';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 interface Template {
   value: string;
@@ -28,7 +30,9 @@ export class CreateDashboardComponent implements OnInit, OnDestroy {
     public dialog: MatDialog,
     private formBuilder: FormBuilder,
     private dashboardsService: DashboardsService,
-    private teamsService: TeamsService
+    private teamsService: TeamsService,
+    private router: Router,
+    private location: Location
   ) {}
 
   userLoggedIn: User = JSON.parse(localStorage.getItem('UserLoggedIn') || '{}');
@@ -40,8 +44,8 @@ export class CreateDashboardComponent implements OnInit, OnDestroy {
   private getTeams: Subscription = new Subscription();
 
   templates: Template[] = [
-    { value: 'pros-and-cons', viewValue: 'Pros and cons' },
-    { value: 'start-stop-continue', viewValue: 'Start - stop - continue' },
+    { value: 'pros and cons', viewValue: 'Pros and cons' },
+    { value: 'start stop continue', viewValue: 'Start - stop - continue' },
   ];
 
   ngOnInit(): void {
@@ -50,16 +54,29 @@ export class CreateDashboardComponent implements OnInit, OnDestroy {
       name: ['', [Validators.required]],
       template: ['', [Validators.required]],
       teamId: this.dashboardsService.myTeamId,
+      teamName: this.dashboardsService.myTeamName,
+      creatorId: this.userLoggedIn.id,
     });
   }
 
   ngOnDestroy(): void {}
 
+  refresh(): void {
+    this.router
+      .navigateByUrl('main', {
+        skipLocationChange: true,
+      })
+      .then(() => {
+        this.router.navigate([decodeURI(this.location.path())]);
+      });
+  }
+
   onSubmit(): void {
     this.postSub = this.dashboardsService
       .createDashboard(this.formGroup.value)
       .subscribe((data) => {
-        console.log(data);
+        this.refresh();
+        this.dialog.closeAll();
       });
   }
 }

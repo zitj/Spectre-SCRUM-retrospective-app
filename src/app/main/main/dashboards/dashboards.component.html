@@ -14,10 +14,21 @@
   <div class="card-container">
     <mat-card class="card" *ngFor="let dashboard of showDashboards">
       <h1>{{ dashboard.name }}</h1>
-      <p>{{ dashboard.template }}</p>
+      <p id="template">{{ dashboard.template }}</p>
+      <p>
+        Team: <span>{{ dashboard.teamName }}</span>
+      </p>
+
       <div class="buttons">
         <div mat-dialog-actions>
-          <button color="primary" class="cardBtn" mat-flat-button>View</button>
+          <button
+            color="primary"
+            class="cardBtn"
+            id="dashViewBtn"
+            mat-flat-button
+          >
+            View
+          </button>
         </div>
       </div>
     </mat-card>

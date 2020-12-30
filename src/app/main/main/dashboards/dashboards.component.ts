@@ -8,7 +8,6 @@ import { User } from '../../../user';
 import { TeamsService } from '../../../teams.service';
 import { DashboardsService } from '../../../dashboards.service';
 import { AlertComponent } from './alert/alert.component';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 @Component({
   selector: 'app-dashboards',
@@ -48,6 +47,7 @@ export class DashboardsComponent implements OnInit, OnDestroy {
         .getDashboards()
         .subscribe((data) => {
           this.dashboards = data;
+
           for (let teamId of this.teamIds) {
             this.dashboards.forEach((dashboard) => {
               if (dashboard.teamId == teamId) {
@@ -63,28 +63,31 @@ export class DashboardsComponent implements OnInit, OnDestroy {
     this.getDashboards.unsubscribe();
   }
 
-  openPanel(id: number): void {
-    this.dialog.open(CreateDashboardComponent, {
-      panelClass: 'createDashboardPanel',
-    });
+  newDashboardInfo(id: number, name: string): void {
     this.canCreateDashboard = true;
     this.dashboardsService.myTeamId = id;
+    this.dashboardsService.myTeamName = name;
   }
 
   openCreateDashboardPanel(): void {
     for (let team of this.teams) {
       if (this.userLoggedIn.id == team.creatorId) {
-        this.openPanel(team.id);
+        this.newDashboardInfo(team.id, team.name);
       }
       for (let member of team.memberId) {
         if (this.userLoggedIn.id == member) {
-          this.openPanel(team.id);
+          this.newDashboardInfo(team.id, team.name);
         }
       }
     }
+
     if (!this.canCreateDashboard) {
       this.dialog.open(AlertComponent, {
         panelClass: 'alert',
+      });
+    } else {
+      this.dialog.open(CreateDashboardComponent, {
+        panelClass: 'createDashboardPanel',
       });
     }
   }

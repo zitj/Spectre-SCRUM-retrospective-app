@@ -105,6 +105,7 @@
       left: 10.4%;
     }
   }
+
   li {
     color: white;
   }
@@ -119,4 +120,11 @@
       transform: rotateY(0deg) translateY(0px);
     }
   }
+}
+#dashViewBtn {
+  width: 100px;
+  left: 25%;
+}
+#template {
+  text-transform: uppercase;
 }

@@ -42,45 +42,26 @@
       "name": "Matematika ",
       "industry": "prosveta",
       "creatorId": 2,
-      "memberId": [
-        1
-      ],
+      "memberId": [1],
       "isAdmin": false,
       "id": 5
     },
     {
-      "name": "angular",
+      "name": "Angular",
       "industry": "it",
       "creatorId": 1,
-      "memberId": "",
+      "memberId": [4],
       "isAdmin": false,
       "id": 6
+    },
+    {
+      "name": "noobzors",
+      "industry": "gaming",
+      "creatorId": 4,
+      "memberId": [1],
+      "isAdmin": false,
+      "id": 7
     }
   ],
-  "dashboards": [
-    {
-      "name": "das",
-      "template": "pros-and-cons",
-      "teamId": 5,
-      "id": 1
-    },
-    {
-      "name": "Novi dash",
-      "template": "pros-and-cons",
-      "teamId": 6,
-      "id": 2
-    },
-    {
-      "name": "Jos jeanput",
-      "template": "start-stop-continue",
-      "teamId": 6,
-      "id": 3
-    },
-    {
-      "name": "Noobzors",
-      "template": "pros-and-cons",
-      "teamId": 5,
-      "id": 4
-    }
-  ]
+  "dashboards": []
 }
