@@ -122,7 +122,8 @@ body {
 .loginContainer .mat-dialog-container,
 .createTeamContainer .mat-dialog-container,
 .deleteTeamContainer .mat-dialog-container,
-.alert .mat-dialog-container {
+.alert .mat-dialog-container,
+.createDashboardPanel .mat-dialog-container {
   border-radius: 4px 30px;
   width: 20%;
   height: 55%;
@@ -131,7 +132,8 @@ body {
   left: 40%;
 }
 .loginContainer .mat-dialog-container,
-.createTeamContainer .mat-dialog-container {
+.createTeamContainer .mat-dialog-container,
+.createDashboardPanel .mat-dialog-container {
   height: 43%;
   top: 29.5%;
   padding: 2% 2.5% 1%;

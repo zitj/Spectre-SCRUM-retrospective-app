@@ -14,6 +14,7 @@ import { AlertComponent } from './create-team/alert/alert.component';
 })
 export class TeamsComponent implements OnInit, OnDestroy {
   constructor(public dialog: MatDialog, private teamsService: TeamsService) {}
+
   userLoggedIn = JSON.parse(localStorage.getItem('UserLoggedIn') || '{}');
   teams: Team[] = [];
   myTeam: Team[] = [];
