@@ -39,11 +39,11 @@
       "id": 2
     },
     {
-      "name": "matematika",
+      "name": "Matematika ",
       "industry": "prosveta",
       "creatorId": 2,
       "memberId": [
-        4
+        1
       ],
       "isAdmin": false,
       "id": 5
@@ -57,5 +57,30 @@
       "id": 6
     }
   ],
-  "dashboards": []
+  "dashboards": [
+    {
+      "name": "das",
+      "template": "pros-and-cons",
+      "teamId": 5,
+      "id": 1
+    },
+    {
+      "name": "Novi dash",
+      "template": "pros-and-cons",
+      "teamId": 6,
+      "id": 2
+    },
+    {
+      "name": "Jos jeanput",
+      "template": "start-stop-continue",
+      "teamId": 6,
+      "id": 3
+    },
+    {
+      "name": "Noobzors",
+      "template": "pros-and-cons",
+      "teamId": 5,
+      "id": 4
+    }
+  ]
 }
