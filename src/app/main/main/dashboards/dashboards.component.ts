@@ -45,7 +45,9 @@ export class DashboardsComponent implements OnInit {
       }
     }
     if (!this.canCreateDashboard) {
-      this.dialog.open(AlertComponent);
+      this.dialog.open(AlertComponent, {
+        panelClass: 'alert',
+      });
     }
   }
 

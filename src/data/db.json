@@ -47,6 +47,14 @@
       ],
       "isAdmin": false,
       "id": 5
+    },
+    {
+      "name": "angular",
+      "industry": "it",
+      "creatorId": 1,
+      "memberId": "",
+      "isAdmin": false,
+      "id": 6
     }
   ],
   "dashboards": []
