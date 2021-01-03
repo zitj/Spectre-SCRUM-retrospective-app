@@ -1,11 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import {
-  FormGroup,
-  Validators,
-  AbstractControl,
-  ValidatorFn,
-} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { TeamsService } from '../../../../teams.service';
 import { Subscription } from 'rxjs';
@@ -65,7 +60,7 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
     });
 
     this.formGroup = this.formBuilder.group({
-      name: ['', [Validators.required, this.uniqueTeamName(this.teams)]],
+      name: ['', [Validators.required]],
       industry: ['', [Validators.required]],
       creatorId: this.userLoggedIn.id,
       memberId: [''],
@@ -78,22 +73,6 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
     this.getUsers.unsubscribe();
     this.getTeams.unsubscribe();
     this.updateSub.unsubscribe();
-  }
-
-  uniqueTeamName(teams: Team[]): ValidatorFn {
-    return (control: AbstractControl): { [key: string]: boolean } | null => {
-      for (let team of this.teams) {
-        if (team.name.toLowerCase() == control.value.toLowerCase()) {
-          this.teamNameErrMsg = 'This team already exists';
-          return { uniqueTeamName: false };
-        }
-      }
-      if (!control.value) {
-        this.teamNameErrMsg = 'Team name is required';
-        return { uniqueTeamName: false };
-      }
-      return null;
-    };
   }
 
   selectMembers(event: any): void {

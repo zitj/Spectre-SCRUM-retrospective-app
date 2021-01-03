@@ -31,37 +31,21 @@
   ],
   "teams": [
     {
-      "name": "Advokat",
-      "industry": "prava",
-      "creatorId": 3,
+      "name": "matish",
+      "industry": "education",
+      "creatorId": 2,
       "memberId": "",
       "isAdmin": false,
       "id": 2
-    },
-    {
-      "name": "Matematika ",
-      "industry": "prosveta",
-      "creatorId": 2,
-      "memberId": [1],
-      "isAdmin": false,
-      "id": 5
-    },
-    {
-      "name": "Angular",
-      "industry": "it",
-      "creatorId": 1,
-      "memberId": [4],
-      "isAdmin": false,
-      "id": 6
-    },
-    {
-      "name": "noobzors",
-      "industry": "gaming",
-      "creatorId": 4,
-      "memberId": [1],
-      "isAdmin": false,
-      "id": 7
     }
   ],
-  "dashboards": []
+  "dashboards": [
+    {
+      "name": "pitagora",
+      "template": "start stop continue",
+      "teamId": 2,
+      "creatorId": 2,
+      "id": 2
+    }
+  ]
 }

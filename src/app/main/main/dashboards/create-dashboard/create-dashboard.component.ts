@@ -39,6 +39,7 @@ export class CreateDashboardComponent implements OnInit, OnDestroy {
   formGroup: FormGroup = new FormGroup({});
   teams: Team[] = [];
   teamId: number = 99;
+  newTeam: Team[] = [];
 
   private postSub: Subscription = new Subscription();
   private getTeams: Subscription = new Subscription();
@@ -49,12 +50,21 @@ export class CreateDashboardComponent implements OnInit, OnDestroy {
   ];
 
   ngOnInit(): void {
-    console.log(this.dashboardsService.myTeamId);
+    this.getTeams = this.teamsService.getTeams().subscribe((data) => {
+      this.teams = data;
+      for (let team of this.teams) {
+        for (let member of team.memberId) {
+          if (this.userLoggedIn.id == member) {
+            this.newTeam.push(team);
+          }
+        }
+      }
+    });
+
     this.formGroup = this.formBuilder.group({
       name: ['', [Validators.required]],
       template: ['', [Validators.required]],
-      teamId: this.dashboardsService.myTeamId,
-      teamName: this.dashboardsService.myTeamName,
+      teamId: ['', [Validators.required]],
       creatorId: this.userLoggedIn.id,
     });
   }

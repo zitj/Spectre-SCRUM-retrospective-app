@@ -1,3 +1,5 @@
+import { Team } from './team';
+
 export interface Dashboard {
   id: number;
   name: string;

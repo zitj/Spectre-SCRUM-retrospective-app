@@ -14,6 +14,16 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
+      <mat-label>Select team</mat-label>
+      <mat-select formControlName="teamId">
+        <mat-option *ngFor="let team of teams" [value]="team.id">
+          {{ team.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error>Pick a team</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
       <mat-label>Select template</mat-label>
       <mat-select formControlName="template">
         <mat-option *ngFor="let template of templates" [value]="template.value">

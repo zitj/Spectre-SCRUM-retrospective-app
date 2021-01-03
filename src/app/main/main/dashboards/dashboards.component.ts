@@ -8,6 +8,7 @@ import { User } from '../../../user';
 import { TeamsService } from '../../../teams.service';
 import { DashboardsService } from '../../../dashboards.service';
 import { AlertComponent } from './alert/alert.component';
+import { templateJitUrl } from '@angular/compiler';
 
 @Component({
   selector: 'app-dashboards',
@@ -32,26 +33,16 @@ export class DashboardsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getTeams = this.teamsService.getTeams().subscribe((data) => {
       this.teams = data;
-      for (let team of this.teams) {
-        if (this.userLoggedIn.id == team.creatorId) {
-          this.teamIds.push(team.id);
-        }
-        for (let member of team.memberId) {
-          if (this.userLoggedIn.id == member) {
-            this.teamIds.push(team.id);
-          }
-        }
-      }
 
       this.getDashboards = this.dashboardsService
         .getDashboards()
         .subscribe((data) => {
           this.dashboards = data;
 
-          for (let teamId of this.teamIds) {
+          for (let team of this.teams) {
             this.dashboards.forEach((dashboard) => {
-              if (dashboard.teamId == teamId) {
-                this.showDashboards.push(dashboard);
+              if (dashboard.teamId == team.id) {
+                dashboard.teamName = team.name;
               }
             });
           }
@@ -63,20 +54,18 @@ export class DashboardsComponent implements OnInit, OnDestroy {
     this.getDashboards.unsubscribe();
   }
 
-  newDashboardInfo(id: number, name: string): void {
+  newDashboardInfo(): void {
     this.canCreateDashboard = true;
-    this.dashboardsService.myTeamId = id;
-    this.dashboardsService.myTeamName = name;
   }
 
   openCreateDashboardPanel(): void {
     for (let team of this.teams) {
       if (this.userLoggedIn.id == team.creatorId) {
-        this.newDashboardInfo(team.id, team.name);
+        this.newDashboardInfo();
       }
       for (let member of team.memberId) {
         if (this.userLoggedIn.id == member) {
-          this.newDashboardInfo(team.id, team.name);
+          this.newDashboardInfo();
         }
       }
     }

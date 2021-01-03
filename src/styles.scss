@@ -132,14 +132,17 @@ body {
   left: 40%;
 }
 .loginContainer .mat-dialog-container,
-.createTeamContainer .mat-dialog-container,
-.createDashboardPanel .mat-dialog-container {
+.createTeamContainer .mat-dialog-container {
   height: 43%;
   top: 29.5%;
   padding: 2% 2.5% 1%;
 }
 .createTeamContainer .mat-dialog-container {
   height: 50%;
+}
+
+.createDashboardPanel .mat-dialog-container {
+  height: 48%;
 }
 
 .deleteTeamContainer .mat-dialog-container,
