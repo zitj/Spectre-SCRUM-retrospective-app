@@ -6,46 +6,8 @@
       "email": "avelj@gmail.com",
       "password": "1234",
       "id": 1
-    },
-    {
-      "firstName": "Branislav",
-      "lastName": "Veljkovic",
-      "email": "bavelj@gmail.com",
-      "password": "111",
-      "id": 2
-    },
-    {
-      "firstName": "Ivan",
-      "lastName": "Veljkovic",
-      "email": "ivelj@gmail.com",
-      "password": "321",
-      "id": 3
-    },
-    {
-      "firstName": "Ognjen",
-      "lastName": "Veljkovic",
-      "email": "ogi@gmail.com",
-      "password": "ogi",
-      "id": 4
     }
   ],
-  "teams": [
-    {
-      "name": "matish",
-      "industry": "education",
-      "creatorId": 2,
-      "memberId": "",
-      "isAdmin": false,
-      "id": 2
-    }
-  ],
-  "dashboards": [
-    {
-      "name": "pitagora",
-      "template": "start stop continue",
-      "teamId": 2,
-      "creatorId": 2,
-      "id": 2
-    }
-  ]
+  "teams": [],
+  "dashboards": []
 }

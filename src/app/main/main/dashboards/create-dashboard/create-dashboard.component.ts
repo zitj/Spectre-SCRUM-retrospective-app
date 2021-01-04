@@ -1,19 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import {
-  FormGroup,
-  Validators,
-  AbstractControl,
-  ValidatorFn,
-  FormBuilder,
-} from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { User } from '../../../../user';
 import { Team } from '../../../../team';
 import { Subscription } from 'rxjs';
 import { DashboardsService } from '../../../../dashboards.service';
 import { TeamsService } from '../../../../teams.service';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
+import { formatCurrency, Location } from '@angular/common';
 
 interface Template {
   value: string;
@@ -38,8 +32,8 @@ export class CreateDashboardComponent implements OnInit, OnDestroy {
   userLoggedIn: User = JSON.parse(localStorage.getItem('UserLoggedIn') || '{}');
   formGroup: FormGroup = new FormGroup({});
   teams: Team[] = [];
+  showTeams: Team[] = [];
   teamId: number = 99;
-  newTeam: Team[] = [];
 
   private postSub: Subscription = new Subscription();
   private getTeams: Subscription = new Subscription();
@@ -52,13 +46,20 @@ export class CreateDashboardComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getTeams = this.teamsService.getTeams().subscribe((data) => {
       this.teams = data;
-      for (let team of this.teams) {
+
+      this.teams.forEach((team) => {
+        if (team.creatorId === this.userLoggedIn.id) {
+          this.showTeams.push(team);
+          console.log(team);
+        }
         for (let member of team.memberId) {
-          if (this.userLoggedIn.id == member) {
-            this.newTeam.push(team);
+          if (member === this.userLoggedIn.id) {
+            this.showTeams.push(team);
+            console.log(team);
           }
         }
-      }
+        this.showTeams.reverse();
+      });
     });
 
     this.formGroup = this.formBuilder.group({

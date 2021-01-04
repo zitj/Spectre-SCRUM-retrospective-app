@@ -39,13 +39,28 @@ export class DashboardsComponent implements OnInit, OnDestroy {
         .subscribe((data) => {
           this.dashboards = data;
 
-          for (let team of this.teams) {
+          this.teams.forEach((team) => {
             this.dashboards.forEach((dashboard) => {
               if (dashboard.teamId == team.id) {
                 dashboard.teamName = team.name;
               }
+              if (
+                team.creatorId === this.userLoggedIn.id &&
+                dashboard.teamId == team.id
+              ) {
+                this.showDashboards.push(dashboard);
+              }
+              for (let member of team.memberId) {
+                if (
+                  member === this.userLoggedIn.id &&
+                  dashboard.teamId == team.id
+                ) {
+                  this.showDashboards.push(dashboard);
+                }
+              }
+              this.showDashboards.reverse();
             });
-          }
+          });
         });
     });
   }
