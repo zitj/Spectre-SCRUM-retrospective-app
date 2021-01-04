@@ -9,6 +9,7 @@ import { TeamsService } from '../../../teams.service';
 import { DashboardsService } from '../../../dashboards.service';
 import { AlertComponent } from './alert/alert.component';
 import { templateJitUrl } from '@angular/compiler';
+import { UnderConstructionComponent } from './under-construction/under-construction.component';
 
 @Component({
   selector: 'app-dashboards',
@@ -97,6 +98,8 @@ export class DashboardsComponent implements OnInit, OnDestroy {
   }
 
   openDashboard(): void {
-    console.log('Open individual dashboard');
+    this.dialog.open(UnderConstructionComponent, {
+      panelClass: 'alert',
+    });
   }
 }

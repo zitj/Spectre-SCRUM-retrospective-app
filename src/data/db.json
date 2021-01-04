@@ -6,8 +6,48 @@
       "email": "avelj@gmail.com",
       "password": "1234",
       "id": 1
+    },
+    {
+      "firstName": "Forest",
+      "lastName": "Gump",
+      "email": "forest@gmail.com",
+      "password": "gump321",
+      "id": 2
+    },
+    {
+      "firstName": "John",
+      "lastName": "Travolta",
+      "email": "john@gmail.com",
+      "password": "john",
+      "id": 3
     }
   ],
-  "teams": [],
-  "dashboards": []
+  "teams": [
+    {
+      "name": "React",
+      "industry": "it",
+      "creatorId": 1,
+      "memberId": [
+        2
+      ],
+      "isAdmin": false,
+      "id": 1
+    }
+  ],
+  "dashboards": [
+    {
+      "name": "Spectre",
+      "template": "pros and cons",
+      "teamId": 1,
+      "creatorId": 1,
+      "id": 1
+    },
+    {
+      "name": "Interngram",
+      "template": "start stop continue",
+      "teamId": 1,
+      "creatorId": 1,
+      "id": 2
+    }
+  ]
 }

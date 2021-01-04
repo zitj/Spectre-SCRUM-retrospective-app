@@ -21,6 +21,34 @@ button {
   left: 40.5%;
   transition: 0.2s ease-in-out;
 }
+img {
+  position: absolute;
+  left: 38%;
+  transform: scale(0.8);
+  top: 29%;
+  animation: construction 3s ease-in-out infinite;
+  @keyframes construction {
+    0% {
+      left: 38%;
+      transform: rotateY(0deg);
+    }
+
+    25% {
+      left: 70%;
+    }
+
+    50% {
+      transform: rotateY(-180deg);
+    }
+    75% {
+      left: 15%;
+    }
+    100% {
+      left: 38%;
+      transform: rotateY(10deg);
+    }
+  }
+}
 svg {
   transform: scale(0.18);
   position: absolute;

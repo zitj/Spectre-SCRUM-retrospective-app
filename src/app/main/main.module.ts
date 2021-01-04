@@ -24,6 +24,7 @@ import { CreateTeamSuccessComponent } from './main/teams/create-team/create-team
 import { DeleteTeamComponent } from './main/teams/delete-team/delete-team.component';
 import { AlertComponent } from './main/teams/create-team/alert/alert.component';
 import { CreateDashboardComponent } from './main/dashboards/create-dashboard/create-dashboard.component';
+import { UnderConstructionComponent } from './main/dashboards/under-construction/under-construction.component';
 const routes = [
   {
     path: '',
@@ -64,6 +65,7 @@ const routes = [
     DeleteTeamComponent,
     AlertComponent,
     CreateDashboardComponent,
+    UnderConstructionComponent,
   ],
   imports: [
     CommonModule,
