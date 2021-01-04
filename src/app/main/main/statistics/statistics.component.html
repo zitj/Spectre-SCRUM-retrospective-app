@@ -1,2 +1,20 @@
 <h1 class="watermark">Statistics</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Industry</th>
+      <th>Members</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let team of teams">
+      <td>{{ team.id }}</td>
+      <td>{{ team.name }}</td>
+      <td>{{ team.industry }}</td>
+      <td>{{ team.memberId.length + 1 }}</td>
+    </tr>
+  </tbody>
+</table>
 <router-outlet></router-outlet>

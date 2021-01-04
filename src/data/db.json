@@ -20,6 +20,13 @@
       "email": "john@gmail.com",
       "password": "john",
       "id": 3
+    },
+    {
+      "firstName": "bane",
+      "lastName": "ban",
+      "email": "bane@gmail.com",
+      "password": "bane",
+      "id": 4
     }
   ],
   "teams": [
@@ -32,6 +39,14 @@
       ],
       "isAdmin": false,
       "id": 1
+    },
+    {
+      "name": "novi",
+      "industry": "novi",
+      "creatorId": 4,
+      "memberId": "",
+      "isAdmin": false,
+      "id": 2
     }
   ],
   "dashboards": [
@@ -48,6 +63,20 @@
       "teamId": 1,
       "creatorId": 1,
       "id": 2
+    },
+    {
+      "name": "Novi",
+      "template": "pros and cons",
+      "teamId": 1,
+      "creatorId": 1,
+      "id": 3
+    },
+    {
+      "name": "novidash",
+      "template": "pros and cons",
+      "teamId": 2,
+      "creatorId": 4,
+      "id": 4
     }
   ]
 }

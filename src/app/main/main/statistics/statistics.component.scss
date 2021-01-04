@@ -1,1 +1,31 @@
 @import "../../../../watermark";
+@import "../../../../variables";
+table {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  color: white;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  border-collapse: collapse;
+  animation: intro 1s ease-in;
+  @keyframes intro {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  th {
+    font-size: 1.7em;
+    padding: 20px;
+    border-bottom: 2px solid $spectre-light-green;
+  }
+  td {
+    padding: 20px;
+    font-size: 1.56em;
+  }
+}
