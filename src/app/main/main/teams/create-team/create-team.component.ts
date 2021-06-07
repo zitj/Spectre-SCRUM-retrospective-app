@@ -42,6 +42,9 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
   teamId: number = 99;
   heading: string = '';
 
+  teamName: string = '';
+  teamIndustry: string = '';
+
   ngOnInit(): void {
     this.heading = this.teamsService.panel;
 
@@ -51,6 +54,8 @@ export class CreateTeamComponent implements OnInit, OnDestroy {
       for (let team of this.teams) {
         if (team.creatorId === this.userLoggedIn.id) {
           this.teamId = team.id;
+          this.teamName = team.name;
+          this.teamIndustry = team.industry;
         }
       }
     });

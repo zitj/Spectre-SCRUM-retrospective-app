@@ -9,7 +9,12 @@
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <mat-form-field appearance="fill">
       <mat-label>Team name</mat-label>
-      <input matInput placeholder="Your team name" formControlName="name" />
+      <input
+        matInput
+        placeholder="Your team name"
+        formControlName="name"
+        value="{{ teamName }}"
+      />
       <mat-error>{{ teamNameErrMsg }}</mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
@@ -18,6 +23,7 @@
         matInput
         placeholder="Your team industry"
         formControlName="industry"
+        value="{{ teamIndustry }}"
       />
       <mat-error>Team industry is required</mat-error>
     </mat-form-field>
